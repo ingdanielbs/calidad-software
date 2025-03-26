@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodologías de Desarrollo de Software</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Metodologías de Desarrollo de Software</h1>
+        
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i> En este módulo exploraremos las principales metodologías de desarrollo de software y su impacto en la calidad del producto final.
+        </div>
+
+        <section id="introduccion">
+            <h2>Introducción</h2>
+            <p>Las metodologías de desarrollo de software son frameworks estructurados que guían a los equipos en la creación de productos de software. Estas metodologías proporcionan procesos, herramientas y técnicas para gestionar el ciclo de vida del desarrollo de software, asegurando que se cumplan los requisitos y se mantenga la calidad.</p>
+            
+            <div class="row mt-4 mb-4">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">¿Por qué son importantes las metodologías?</h5>
+                            <ul>
+                                <li>Proporcionan un marco de trabajo estructurado</li>
+                                <li>Mejoran la planificación y gestión de proyectos</li>
+                                <li>Facilitan la comunicación entre equipos</li>
+                                <li>Ayudan a mantener la calidad del software</li>
+                                <li>Permiten adaptarse a los cambios de requisitos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/300x200?text=Metodologías+de+Desarrollo" alt="Metodologías de Desarrollo" class="img-fluid rounded">
+                </div>
+            </div>
+        </section>
+
+        <section id="tradicionales">
+            <h2>Metodologías Tradicionales</h2>
+            <p>Las metodologías tradicionales o en cascada se caracterizan por seguir un proceso secuencial y lineal, donde cada fase debe completarse antes de pasar a la siguiente.</p>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h3 class="h5 mb-0">Modelo en Cascada</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p>El modelo en cascada es uno de los enfoques más antiguos y sigue estas fases secuenciales:</p>
+                            <ol>
+                                <li><strong>Requisitos:</strong> Definición completa de las necesidades</li>
+                                <li><strong>Diseño:</strong> Arquitectura del sistema y componentes</li>
+                                <li><strong>Implementación:</strong> Desarrollo del código</li>
+                                <li><strong>Verificación:</strong> Pruebas del sistema</li>
+                                <li><strong>Mantenimiento:</strong> Corrección y mejora</li>
+                            </ol>
+                            <p><strong>Ventajas:</strong> Simple, fácil de entender y gestionar.</p>
+                            <p><strong>Desventajas:</strong> Poca flexibilidad ante cambios, detección tardía de errores.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/250x200?text=Modelo+Cascada" alt="Modelo en Cascada" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h3 class="h5 mb-0">Modelo V</h3>
+                </div>
+                <div class="card-body">
+                    <p>El modelo V es una extensión del modelo en cascada que hace énfasis en la verificación y validación en paralelo al desarrollo:</p>
+                    <ul>
+                        <li>Cada fase de desarrollo tiene una fase correspondiente de verificación</li>
+                        <li>Mejora la detección temprana de defectos</li>
+                        <li>Se enfoca fuertemente en las pruebas y la calidad</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="agiles">
+            <h2>Metodologías Ágiles</h2>
+            <p>Las metodologías ágiles surgieron como respuesta a las limitaciones de los métodos tradicionales, ofreciendo un enfoque más flexible, colaborativo y adaptativo.</p>
+            
+            <div class="alert alert-primary">
+                <h4>Manifiesto Ágil</h4>
+                <p>"Estamos descubriendo formas mejores de desarrollar software tanto por nuestra propia experiencia como ayudando a terceros. A través de este trabajo hemos aprendido a valorar:"</p>
+                <ul>
+                    <li><strong>Individuos e interacciones</strong> sobre procesos y herramientas</li>
+                    <li><strong>Software funcionando</strong> sobre documentación extensiva</li>
+                    <li><strong>Colaboración con el cliente</strong> sobre negociación contractual</li>
+                    <li><strong>Respuesta ante el cambio</strong> sobre seguir un plan</li>
+                </ul>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Scrum</h5>
+                            <p class="card-text">Framework que divide el trabajo en sprints (iteraciones de 2-4 semanas) con roles específicos:</p>
+                            <ul>
+                                <li>Product Owner: Representa las necesidades del cliente</li>
+                                <li>Scrum Master: Facilita el proceso y elimina impedimentos</li>
+                                <li>Equipo de desarrollo: Responsable de entregar incrementos de producto</li>
+                            </ul>
+                            <p class="card-text"><strong>Artefactos principales:</strong> Product Backlog, Sprint Backlog, Incremento</p>
+                            <p class="card-text"><strong>Eventos:</strong> Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Kanban</h5>
+                            <p class="card-text">Sistema visual para gestionar el trabajo a medida que avanza por un proceso:</p>
+                            <ul>
+                                <li>Visualización del flujo de trabajo</li>
+                                <li>Limitación del trabajo en progreso (WIP)</li>
+                                <li>Gestión activa de elementos en proceso</li>
+                                <li>Mejora continua del flujo</li>
+                            </ul>
+                            <p class="card-text"><strong>Ventajas:</strong> Flexible, fácil de implementar, mejora la entrega continua</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Extreme Programming (XP)</h5>
+                            <p class="card-text">Enfocado en la excelencia técnica y prácticas de codificación:</p>
+                            <ul>
+                                <li>Programación en parejas</li>
+                                <li>Desarrollo guiado por pruebas (TDD)</li>
+                                <li>Integración continua</li>
+                                <li>Refactorización constante</li>
+                                <li>Propiedad colectiva del código</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Lean Software Development</h5>
+                            <p class="card-text">Adaptación de los principios de manufactura lean a desarrollo de software:</p>
+                            <ul>
+                                <li>Eliminar desperdicios</li>
+                                <li>Amplificar el aprendizaje</li>
+                                <li>Decidir lo más tarde posible</li>
+                                <li>Entregar lo más rápido posible</li>
+                                <li>Potenciar al equipo</li>
+                                <li>Integridad incorporada</li>
+                                <li>Ver el conjunto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hibridas" class="mt-4">
+            <h2>Enfoques Híbridos</h2>
+            <p>Muchas organizaciones adoptan enfoques híbridos que combinan elementos de metodologías tradicionales y ágiles para adaptarse a sus necesidades específicas.</p>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h3 class="h5 mb-0">DevOps</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p>DevOps es una filosofía y conjunto de prácticas que busca unificar el desarrollo de software (Dev) y las operaciones de TI (Ops):</p>
+                            <ul>
+                                <li>Promueve la colaboración entre equipos</li>
+                                <li>Automatización de procesos (CI/CD)</li>
+                                <li>Entrega continua y despliegue continuo</li>
+                                <li>Monitorización e infraestructura como código</li>
+                                <li>Feedback rápido y mejora continua</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/250x200?text=DevOps" alt="DevOps" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="seleccion">
+            <h2>Selección de Metodologías</h2>
+            <p>La elección de la metodología adecuada depende de varios factores:</p>
+            
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Factor</th>
+                            <th>Metodología Tradicional</th>
+                            <th>Metodología Ágil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Requisitos</td>
+                            <td>Estables y bien definidos</td>
+                            <td>Cambiantes o en evolución</td>
+                        </tr>
+                        <tr>
+                            <td>Tamaño del proyecto</td>
+                            <td>Grande y complejo</td>
+                            <td>Pequeño a mediano</td>
+                        </tr>
+                        <tr>
+                            <td>Participación del cliente</td>
+                            <td>Principalmente al inicio y final</td>
+                            <td>Continua durante todo el proyecto</td>
+                        </tr>
+                        <tr>
+                            <td>Documentación</td>
+                            <td>Exhaustiva</td>
+                            <td>Mínima necesaria</td>
+                        </tr>
+                        <tr>
+                            <td>Plazo del proyecto</td>
+                            <td>Puede ser más largo</td>
+                            <td>Generalmente más corto</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="actividad" class="mt-5">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Actividad: Análisis de Caso</h3>
+                </div>
+                <div class="card-body">
+                    <p>Analiza el siguiente caso y selecciona la metodología más adecuada:</p>
+                    
+                    <div class="mb-4 p-3 bg-light rounded">
+                        <p><strong>Caso:</strong> Una startup está desarrollando una aplicación móvil de comercio electrónico. Los requisitos no están completamente definidos y se espera que cambien según el feedback de los usuarios. El equipo es pequeño (5 desarrolladores) y necesitan lanzar una versión mínima viable (MVP) en 2 meses.</p>
+                    </div>
+                    
+                    <form id="metodologia-quiz">
+                        <p><strong>¿Qué metodología recomendarías?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="metodologia" id="cascada" value="cascada">
+                            <label class="form-check-label" for="cascada">
+                                Modelo en Cascada
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="metodologia" id="scrum" value="scrum">
+                            <label class="form-check-label" for="scrum">
+                                Scrum
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="metodologia" id="modelo-v" value="modelo-v">
+                            <label class="form-check-label" for="modelo-v">
+                                Modelo V
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="metodologia" id="xp" value="xp">
+                            <label class="form-check-label" for="xp">
+                                Extreme Programming (XP)
+                            </label>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" id="verificar-metodologia" class="btn btn-success">Verificar respuesta</button>
+                        </div>
+                        
+                        <div id="metodologia-feedback" class="mt-3" style="display: none;">
+                            <!-- El feedback se mostrará aquí mediante JavaScript -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="actividad-2" class="mt-5 mb-5">
+            <div class="card border-info">
+                <div class="card-header bg-info text-white">
+                    <h3 class="mb-0">Ejercicio: Mapeo de Prácticas</h3>
+                </div>
+                <div class="card-body">
+                    <p>Relaciona cada práctica con la metodología a la que está más asociada:</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="practice-item p-2 mb-2 bg-light rounded" draggable="true" data-practice="daily-scrum">Daily Stand-up</div>
+                            <div class="practice-item p-2 mb-2 bg-light rounded" draggable="true" data-practice="pair-programming">Programación en parejas</div>
+                            <div class="practice-item p-2 mb-2 bg-light rounded" draggable="true" data-practice="wip-limits">Límites de trabajo en progreso</div>
+                            <div class="practice-item p-2 mb-2 bg-light rounded" draggable="true" data-practice="requirements-doc">Documento de requisitos completo</div>
+                            <div class="practice-item p-2 mb-2 bg-light rounded" draggable="true" data-practice="ci-cd">Integración/Despliegue continuo</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="methodology-container p-2 mb-3 border border-primary rounded">
+                                <h6>Scrum</h6>
+                                <div class="drop-zone" data-methodology="scrum"></div>
+                            </div>
+                            <div class="methodology-container p-2 mb-3 border border-primary rounded">
+                                <h6>XP</h6>
+                                <div class="drop-zone" data-methodology="xp"></div>
+                            </div>
+                            <div class="methodology-container p-2 mb-3 border border-primary rounded">
+                                <h6>Kanban</h6>
+                                <div class="drop-zone" data-methodology="kanban"></div>
+                            </div>
+                            <div class="methodology-container p-2 mb-3 border border-primary rounded">
+                                <h6>Cascada</h6>
+                                <div class="drop-zone" data-methodology="cascada"></div>
+                            </div>
+                            <div class="methodology-container p-2 mb-3 border border-primary rounded">
+                                <h6>DevOps</h6>
+                                <div class="drop-zone" data-methodology="devops"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                        <button type="button" id="verificar-mapeo" class="btn btn-success">Verificar ejercicio</button>
+                    </div>
+                    
+                    <div id="mapeo-feedback" class="mt-3" style="display: none;">
+                        <!-- El feedback se mostrará aquí mediante JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resumen" class="mt-4">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h2 class="card-title">Resumen del módulo</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-light">Las metodologías de desarrollo de software proporcionan marcos estructurados para gestionar el ciclo de vida del desarrollo.</li>
+                        <li class="list-group-item bg-light">Las metodologías tradicionales (Cascada, Modelo V) siguen un enfoque secuencial y son adecuadas cuando los requisitos son estables.</li>
+                        <li class="list-group-item bg-light">Las metodologías ágiles (Scrum, Kanban, XP) ofrecen mayor flexibilidad y adaptabilidad a los cambios.</li>
+                        <li class="list-group-item bg-light">DevOps integra desarrollo y operaciones para mejorar la entrega continua y la calidad.</li>
+                        <li class="list-group-item bg-light">La elección de la metodología debe basarse en factores como el tamaño del proyecto, la estabilidad de los requisitos y la participación del cliente.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Botón para marcar como completado -->
+        <div class="text-center mt-5">
+            <button id="mark-complete" class="btn btn-lg btn-primary">
+                <i class="fas fa-check-circle me-2"></i> Marcar módulo como completado
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Código para la actividad de selección de metodología
+        document.getElementById('verificar-metodologia').addEventListener('click', function() {
+            const seleccion = document.querySelector('input[name="metodologia"]:checked');
+            const feedbackElement = document.getElementById('metodologia-feedback');
+            
+            if (!seleccion) {
+                feedbackElement.innerHTML = '<div class="alert alert-warning">Por favor, selecciona una opción.</div>';
+                feedbackElement.style.display = 'block';
+                return;
+            }
+            
+            if (seleccion.value === 'scrum' || seleccion.value === 'xp') {
+                feedbackElement.innerHTML = '<div class="alert alert-success"><i class="fas fa-check-circle me-2"></i> ¡Correcto! Una metodología ágil como ' + 
+                    (seleccion.value === 'scrum' ? 'Scrum' : 'Extreme Programming') + 
+                    ' es ideal para este caso debido a la naturaleza cambiante de los requisitos, el equipo pequeño y la necesidad de entregar rápidamente.</div>';
+            } else {
+                feedbackElement.innerHTML = '<div class="alert alert-danger"><i class="fas fa-times-circle me-2"></i> Esta no es la mejor opción. Para un proyecto con requisitos cambiantes y necesidad de entrega rápida, las metodologías ágiles serían más adecuadas.</div>';
+            }
+            
+            feedbackElement.style.display = 'block';
+        });
+        
+        // Código para la actividad de drag and drop (simulado)
+        document.getElementById('verificar-mapeo').addEventListener('click', function() {
+            const feedbackElement = document.getElementById('mapeo-feedback');
+            
+            // En una implementación real, aquí verificaríamos las asignaciones
+            // Para esta simulación, simplemente mostraremos las respuestas correctas
+            
+            feedbackElement.innerHTML = `
+                <div class="alert alert-info">
+                    <h5>Respuestas correctas:</h5>
+                    <ul>
+                        <li><strong>Scrum:</strong> Daily Stand-up</li>
+                        <li><strong>XP:</strong> Programación en parejas</li>
+                        <li><strong>Kanban:</strong> Límites de trabajo en progreso</li>
+                        <li><strong>Cascada:</strong> Documento de requisitos completo</li>
+                        <li><strong>DevOps:</strong> Integración/Despliegue continuo</li>
+                    </ul>
+                </div>
+            `;
+            
+            feedbackElement.style.display = 'block';
+        });
+        
+        // Marcar como completado
+        document.getElementById('mark-complete').addEventListener('click', function() {
+            alert('¡Módulo completado! Tu progreso ha sido guardado.');
+            
+            // En una implementación real, aquí se enviaría una solicitud al servidor
+            // para actualizar el progreso del usuario
+        });
+    </script>
+</body>
+</html>

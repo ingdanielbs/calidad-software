@@ -1,0 +1,515 @@
+<div class="container-fluid">
+    <h2 class="module-title">Ciclo PHVA: Planear, Hacer, Verificar, Actuar</h2>
+    
+    <div class="alert alert-info">
+        <i class="fas fa-info-circle me-2"></i> Este módulo explora el Ciclo PHVA como metodología para la mejora continua en los procesos de desarrollo de software.
+    </div>
+    
+    <!-- Introducción -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h3 class="h5 mb-0">¿Qué es el Ciclo PHVA?</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-7">
+                    <p>El <strong>Ciclo PHVA</strong> (Planear, Hacer, Verificar, Actuar), también conocido como <strong>Ciclo de Deming</strong> o <strong>Ciclo de Mejora Continua</strong>, es una estrategia de mejora continua de la calidad en cuatro pasos.</p>
+                    
+                    <p>Fue desarrollado inicialmente por Walter Shewhart y posteriormente popularizado por W. Edwards Deming. Es una herramienta fundamental en la gestión de la calidad y en la implementación de sistemas de gestión.</p>
+                    
+                    <p>El ciclo PHVA representa un proceso sistemático para la resolución de problemas y la implementación de mejoras, basado en hechos y datos, no en opiniones.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="text-center">
+                        <div class="rounded-circle d-inline-block position-relative" style="width: 250px; height: 250px; background: #f8f9fa; overflow: hidden;">
+                            <div class="position-absolute" style="width: 125px; height: 125px; background: #28a745; top: 0; left: 0; border-top-left-radius: 250px;">
+                                <div class="position-absolute" style="top: 50px; left: 30px; transform: rotate(-45deg);">
+                                    <h5 class="text-white">PLANEAR</h5>
+                                </div>
+                            </div>
+                            <div class="position-absolute" style="width: 125px; height: 125px; background: #17a2b8; top: 0; right: 0; border-top-right-radius: 250px;">
+                                <div class="position-absolute" style="top: 50px; right: 40px; transform: rotate(45deg);">
+                                    <h5 class="text-white">HACER</h5>
+                                </div>
+                            </div>
+                            <div class="position-absolute" style="width: 125px; height: 125px; background: #dc3545; bottom: 0; right: 0; border-bottom-right-radius: 250px;">
+                                <div class="position-absolute" style="bottom: 50px; right: 20px; transform: rotate(-45deg);">
+                                    <h5 class="text-white">ACTUAR</h5>
+                                </div>
+                            </div>
+                            <div class="position-absolute" style="width: 125px; height: 125px; background: #ffc107; bottom: 0; left: 0; border-bottom-left-radius: 250px;">
+                                <div class="position-absolute" style="bottom: 50px; left: 15px; transform: rotate(45deg);">
+                                    <h5 class="text-white">VERIFICAR</h5>
+                                </div>
+                            </div>
+                            <div class="position-absolute rounded-circle bg-white d-flex align-items-center justify-content-center" style="width: 100px; height: 100px; top: 75px; left: 75px;">
+                                <i class="fas fa-sync-alt fa-3x text-primary"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted mt-2"><small>Representación del Ciclo PHVA</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-success mt-3">
+                <i class="fas fa-lightbulb me-2"></i> <strong>Concepto clave:</strong> El ciclo PHVA no tiene fin, es un ciclo de mejora continua que siempre se está retroalimentando.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fases del Ciclo PHVA -->
+    <h3 class="mb-4">Fases del Ciclo PHVA</h3>
+    
+    <!-- Planear -->
+    <div class="card mb-4 shadow-sm border-success">
+        <div class="card-header bg-success text-white">
+            <h4 class="h5 mb-0">1. Planear (Plan)</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p><strong>Definición:</strong> Es la fase donde se establecen los objetivos y se identifican los procesos necesarios para lograr determinados resultados de acuerdo a las políticas de la organización.</p>
+                    
+                    <p><strong>Actividades principales:</strong></p>
+                    <ul>
+                        <li>Identificar el problema o la oportunidad de mejora</li>
+                        <li>Recopilar datos para profundizar en el conocimiento del proceso</li>
+                        <li>Analizar e interpretar los datos</li>
+                        <li>Establecer los objetivos de mejora</li>
+                        <li>Detallar las especificaciones a alcanzar</li>
+                        <li>Definir los procesos necesarios para conseguir estos objetivos, verificando las especificaciones</li>
+                    </ul>
+                    
+                    <div class="alert alert-light border mt-3">
+                        <p><strong>Preguntas clave:</strong></p>
+                        <ul class="mb-0">
+                            <li>¿Qué hacer?</li>
+                            <li>¿Cómo hacerlo?</li>
+                            <li>¿Quién lo va a hacer?</li>
+                            <li>¿Cuándo se va a hacer?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-light h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Ejemplos en Desarrollo de Software</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light">Definir requisitos del sistema</li>
+                                <li class="list-group-item bg-light">Establecer cronograma de desarrollo</li>
+                                <li class="list-group-item bg-light">Diseñar arquitectura del software</li>
+                                <li class="list-group-item bg-light">Definir estándares de calidad</li>
+                                <li class="list-group-item bg-light">Establecer métricas de éxito del proyecto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hacer -->
+    <div class="card mb-4 shadow-sm border-info">
+        <div class="card-header bg-info text-white">
+            <h4 class="h5 mb-0">2. Hacer (Do)</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p><strong>Definición:</strong> Consiste en implementar los procesos según lo planificado. Es la fase de ejecución de lo establecido en la planificación.</p>
+                    
+                    <p><strong>Actividades principales:</strong></p>
+                    <ul>
+                        <li>Implementar la mejora/solución</li>
+                        <li>Ejecutar los procesos definidos en el paso anterior</li>
+                        <li>Documentar las acciones realizadas</li>
+                        <li>Recopilar datos para su posterior análisis en la fase de verificación</li>
+                    </ul>
+                    
+                    <div class="alert alert-light border mt-3">
+                        <p><strong>Aspectos importantes:</strong></p>
+                        <ul class="mb-0">
+                            <li>Formación del personal involucrado</li>
+                            <li>Seguimiento cercano de la implementación</li>
+                            <li>Asegurar que se siguen los procesos tal como fueron diseñados</li>
+                            <li>Documentar problemas y observaciones</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-light h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Ejemplos en Desarrollo de Software</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light">Codificar siguiendo los estándares</li>
+                                <li class="list-group-item bg-light">Implementar pruebas unitarias</li>
+                                <li class="list-group-item bg-light">Realizar revisiones de código</li>
+                                <li class="list-group-item bg-light">Generar documentación técnica</li>
+                                <li class="list-group-item bg-light">Construir entregables del proyecto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Verificar -->
+    <div class="card mb-4 shadow-sm border-warning">
+        <div class="card-header bg-warning text-dark">
+            <h4 class="h5 mb-0">3. Verificar (Check)</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p><strong>Definición:</strong> En esta fase se realiza el seguimiento y la medición de los procesos respecto a las políticas, los objetivos y los requisitos planificados, e informar sobre los resultados.</p>
+                    
+                    <p><strong>Actividades principales:</strong></p>
+                    <ul>
+                        <li>Evaluar los resultados obtenidos</li>
+                        <li>Comparar los resultados con los objetivos planteados</li>
+                        <li>Verificar si se han producido mejoras</li>
+                        <li>Identificar desviaciones y sus causas</li>
+                        <li>Documentar conclusiones</li>
+                    </ul>
+                    
+                    <div class="alert alert-light border mt-3">
+                        <p><strong>Herramientas útiles:</strong></p>
+                        <ul class="mb-0">
+                            <li>Indicadores de rendimiento (KPI)</li>
+                            <li>Gráficos de control</li>
+                            <li>Listas de verificación</li>
+                            <li>Auditorías</li>
+                            <li>Retroalimentación del cliente</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-light h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Ejemplos en Desarrollo de Software</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light">Ejecutar pruebas de integración</li>
+                                <li class="list-group-item bg-light">Realizar pruebas de aceptación</li>
+                                <li class="list-group-item bg-light">Verificar cumplimiento de requisitos</li>
+                                <li class="list-group-item bg-light">Realizar análisis de métricas de calidad</li>
+                                <li class="list-group-item bg-light">Evaluar feedback de usuarios</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Actuar -->
+    <div class="card mb-5 shadow-sm border-danger">
+        <div class="card-header bg-danger text-white">
+            <h4 class="h5 mb-0">4. Actuar (Act)</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p><strong>Definición:</strong> En esta fase se toman acciones para mejorar continuamente el desempeño de los procesos, según los resultados obtenidos en la fase de verificación.</p>
+                    
+                    <p><strong>Actividades principales:</strong></p>
+                    <ul>
+                        <li>Analizar los datos obtenidos en la fase de verificación</li>
+                        <li>Tomar acciones correctivas y preventivas</li>
+                        <li>Estandarizar los cambios que han generado mejoras</li>
+                        <li>Formar al personal en los cambios realizados</li>
+                        <li>Identificar nuevas oportunidades de mejora</li>
+                        <li>Comenzar un nuevo ciclo PHVA</li>
+                    </ul>
+                    
+                    <div class="alert alert-light border mt-3">
+                        <p><strong>Alternativas de acción:</strong></p>
+                        <ul class="mb-0">
+                            <li>Si se lograron los objetivos: Estandarizar y controlar</li>
+                            <li>Si no se lograron los objetivos: Analizar y volver a planear</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-light h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Ejemplos en Desarrollo de Software</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light">Refactorizar código problemático</li>
+                                <li class="list-group-item bg-light">Actualizar documentación técnica</li>
+                                <li class="list-group-item bg-light">Implementar mejoras basadas en feedback</li>
+                                <li class="list-group-item bg-light">Estandarizar buenas prácticas descubiertas</li>
+                                <li class="list-group-item bg-light">Planificar nuevas iteraciones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PHVA en Desarrollo de Software -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h4 class="h5 mb-0">PHVA en el Desarrollo de Software</h4>
+        </div>
+        <div class="card-body">
+            <p>El ciclo PHVA se alinea perfectamente con las metodologías de desarrollo de software, especialmente con las metodologías ágiles:</p>
+            
+            <div class="table-responsive">
+                <table class="table table-bordered custom-table">
+                    <thead>
+                        <tr>
+                            <th>Fase PHVA</th>
+                            <th>Aplicación en Metodologías Tradicionales</th>
+                            <th>Aplicación en Metodologías Ágiles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong class="text-success">Planear</strong></td>
+                            <td>Fase de requisitos y diseño completo</td>
+                            <td>Planificación de sprint o iteración</td>
+                        </tr>
+                        <tr>
+                            <td><strong class="text-info">Hacer</strong></td>
+                            <td>Fase de codificación completa</td>
+                            <td>Desarrollo durante el sprint</td>
+                        </tr>
+                        <tr>
+                            <td><strong class="text-warning">Verificar</strong></td>
+                            <td>Fase de pruebas</td>
+                            <td>Pruebas continuas y reunión de revisión</td>
+                        </tr>
+                        <tr>
+                            <td><strong class="text-danger">Actuar</strong></td>
+                            <td>Mantenimiento y mejoras para siguiente versión</td>
+                            <td>Retrospectiva y ajustes para siguiente sprint</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="alert alert-primary mt-3">
+                <i class="fas fa-info-circle me-2"></i> <strong>Nota:</strong> Las metodologías ágiles implementan múltiples ciclos PHVA de corta duración (sprints), mientras que las metodologías tradicionales suelen realizar ciclos más largos.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Beneficios del Ciclo PHVA -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h4 class="h5 mb-0">Beneficios del Ciclo PHVA</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-chart-line text-success me-2"></i> Mejora del Rendimiento</h5>
+                            <p class="card-text">Optimiza los procesos de forma continua, aumentando la productividad y reduciendo los desperdicios.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-shield-alt text-primary me-2"></i> Prevención de Errores</h5>
+                            <p class="card-text">Enfoque proactivo que ayuda a identificar y corregir problemas antes de que afecten al producto final.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-clipboard-check text-warning me-2"></i> Enfoque Sistemático</h5>
+                            <p class="card-text">Proporciona un método estructurado para abordar problemas y mejoras en lugar de actuar por intuición.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-users text-info me-2"></i> Participación del Equipo</h5>
+                            <p class="card-text">Fomenta la colaboración y el compromiso de todo el equipo en la mejora continua.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-database text-danger me-2"></i> Decisiones Basadas en Datos</h5>
+                            <p class="card-text">Promueve la toma de decisiones basada en evidencias y no en suposiciones.</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-smile text-success me-2"></i> Satisfacción del Cliente</h5>
+                            <p class="card-text">Al mejorar continuamente la calidad, aumenta la satisfacción del cliente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Actividad Interactiva -->
+    <div class="card mb-5">
+        <div class="card-header bg-primary text-white">
+            <h4 class="h5 mb-0">Actividad Interactiva: Aplicación del Ciclo PHVA</h4>
+        </div>
+        <div class="card-body">
+            <p>A continuación encontrarás una situación problemática en desarrollo de software. Para cada fase del ciclo PHVA, selecciona la acción más apropiada:</p>
+            
+            <div class="alert alert-secondary">
+                <strong>Escenario:</strong> Has detectado que muchos usuarios reportan lentitud en una aplicación web que tu equipo ha desarrollado.
+            </div>
+            
+            <form id="phva-activity-form">
+                <div class="mb-4">
+                    <h5><span class="badge bg-success">Planear</span></h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="planear" id="planear1" value="incorrect">
+                        <label class="form-check-label" for="planear1">
+                            Implementar inmediatamente un servidor más potente
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="planear" id="planear2" value="correct">
+                        <label class="form-check-label" for="planear2">
+                            Analizar métricas de rendimiento y definir objetivos de tiempo de respuesta
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="planear" id="planear3" value="incorrect">
+                        <label class="form-check-label" for="planear3">
+                            Notificar a los usuarios que estás trabajando en el problema
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h5><span class="badge bg-info">Hacer</span></h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="hacer" id="hacer1" value="incorrect">
+                        <label class="form-check-label" for="hacer1">
+                            Volver a planificar el proyecto desde cero
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="hacer" id="hacer2" value="incorrect">
+                        <label class="form-check-label" for="hacer2">
+                            Revisar todos los reportes de los usuarios
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="hacer" id="hacer3" value="correct">
+                        <label class="form-check-label" for="hacer3">
+                            Implementar las optimizaciones identificadas en la fase de planificación
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h5><span class="badge bg-warning text-dark">Verificar</span></h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="verificar" id="verificar1" value="correct">
+                        <label class="form-check-label" for="verificar1">
+                            Realizar pruebas de rendimiento y comparar con las métricas iniciales
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="verificar" id="verificar2" value="incorrect">
+                        <label class="form-check-label" for="verificar2">
+                            Implementar más cambios inmediatamente
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="verificar" id="verificar3" value="incorrect">
+                        <label class="form-check-label" for="verificar3">
+                            Informar a los usuarios que el problema está resuelto
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h5><span class="badge bg-danger">Actuar</span></h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="actuar" id="actuar1" value="incorrect">
+                        <label class="form-check-label" for="actuar1">
+                            Cerrar el caso y olvidarse del problema
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="actuar" id="actuar2" value="correct">
+                        <label class="form-check-label" for="actuar2">
+                            Estandarizar las mejoras efectivas y planificar próximas optimizaciones
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="actuar" id="actuar3" value="incorrect">
+                        <label class="form-check-label" for="actuar3">
+                            Volver a la fase de planificación sin implementar nada
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Comprobar Respuestas</button>
+                <div id="phva-activity-result" class="mt-3" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Visualización del Ciclo PHVA -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h4 class="h5 mb-0">Visualización Interactiva del Ciclo PHVA</h4>
+        </div>
+        <div class="card-body">
+            <div class="text-center mb-4">
+                <div class="phva-diagram">
+                    <!-- Planear -->
+                    <div class="phva-step step-planear mb-3" data-type="phva-details" data-phase="planear">
+                        <h5><i class="fas fa-clipboard-list me-2"></i> Planear</h5>
+                        <p class="mb-0">Establecer objetivos y procesos</p>
+                    </div>
+                    
+                    <!-- Hacer -->
+                    <div class="phva-step step-hacer mb-3" data-type="phva-details" data-phase="hacer">
+                        <h5><i class="fas fa-cogs me-2"></i> Hacer</h5>
+                        <p class="mb-0">Implementar los procesos</p>
+                    </div>
+                    
+                    <!-- Verificar -->
+                    <div class="phva-step step-verificar mb-3" data-type="phva-details" data-phase="verificar">
+                        <h5><i class="fas fa-search me-2"></i> Verificar</h5>
+                        <p class="mb-0">Seguimiento y medición</p>
+                    </div>
+                    
+                    <!-- Actuar -->
+                    <div class="phva-step step-actuar mb-3" data-type="phva-details" data-phase="actuar">
+                        <h5><i class="fas fa-sync-alt me-2"></i> Actuar</h5>
+                        <p class="mb-0">Tomar acciones para mejorar</p>
+                    </div>
+                </div>
+                
+                <p class="text-muted"><small>Haz clic en cada fase para ver más detalles</small></p>
+            </div>
+            
+            <div id="phva-details" class="mt-4"></div>
+        </div>
+    </div>
+    
+    <!-- Resumen del Módulo -->
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h3 class="h5 mb-0">Resumen del Módulo</h3>
+        </div>
+        <div class="card-body">
+            <p>En este módulo hemos aprendido:</p>
+            <ul>
+                <li>El concepto del <strong>Ciclo PHVA</strong> como metodología de mejora continua</li>
+                <li>Las cuatro fases del ciclo: <strong>Planear, Hacer, Verificar y Actuar</strong></li>
+                <li>Las actividades y herramientas específicas de cada fase del ciclo</li>
+                <li>Cómo aplicar el ciclo PHVA al desarrollo de software</li>
+                <li>Las diferencias en la aplicación del PHVA en metodologías ágiles y tradicionales</li>
+                <li>Los beneficios de implementar el ciclo PHVA en los procesos de desarrollo</li>
+            </ul>
+            <p>En el próximo módulo, exploraremos la <strong>Caracterización de Procesos</strong>, donde aprenderemos a definir en detalle los componentes de cada proceso.</p>
+        </div>
+    </div>
+</div>
