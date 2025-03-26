@@ -1,135 +1,56 @@
 <div class="container-fluid">
-    <h2 class="module-title">Gestión de Riesgos en Proyectos de Software</h2>
+    <h2 class="module-title">Requisitos y Documentación</h2>
     
     <div class="alert alert-info">
-        <i class="fas fa-info-circle me-2"></i> Este módulo te enseñará a identificar, evaluar y mitigar riesgos en proyectos de desarrollo de software para mejorar la calidad y el éxito del producto.
+        <i class="fas fa-info-circle me-2"></i> Este módulo explora los conceptos fundamentales sobre requisitos de software, sus tipos, técnicas de elicitación y buenas prácticas para su documentación.
     </div>
     
-    <!-- Introducción a la Gestión de Riesgos -->
+    <!-- Introducción a los Requisitos -->
     <section id="introduccion" class="mb-5">
-        <h3>Introducción a la Gestión de Riesgos</h3>
+        <h3>Conceptos Fundamentales de Requisitos</h3>
         
         <div class="row align-items-center mb-4">
             <div class="col-md-8">
-                <p>La gestión de riesgos es un componente crítico para garantizar la calidad y el éxito de cualquier proyecto de software. Un riesgo es un evento o condición incierta que, si ocurre, puede tener un efecto positivo o negativo en los objetivos del proyecto.</p>
+                <p>Los <strong>requisitos de software</strong> son descripciones de los servicios que debe proporcionar un sistema y las restricciones bajo las cuales debe operar. Representan las necesidades y restricciones establecidas por los clientes y usuarios que ayudan a resolver un problema específico.</p>
                 
-                <p>En el desarrollo de software, donde la complejidad y la incertidumbre son comunes, implementar un proceso estructurado de gestión de riesgos permite:</p>
+                <p>Los requisitos son fundamentales porque:</p>
                 
                 <ul>
-                    <li>Reducir la probabilidad de fracaso del proyecto</li>
-                    <li>Minimizar las sorpresas y problemas imprevistos</li>
-                    <li>Optimizar las respuestas a las oportunidades</li>
-                    <li>Mejorar las posibilidades de alcanzar los objetivos dentro de tiempo y presupuesto</li>
-                    <li>Aumentar la calidad final del software</li>
+                    <li>Definen qué debe hacer el sistema (y qué no debe hacer)</li>
+                    <li>Establecen un contrato entre cliente y desarrollador</li>
+                    <li>Sirven como base para la estimación de costos y cronogramas</li>
+                    <li>Proporcionan la base para la validación y verificación</li>
+                    <li>Facilitan la gestión del alcance del proyecto</li>
                 </ul>
             </div>
             <div class="col-md-4 text-center">
-                <img src="https://via.placeholder.com/300x200?text=Gestión+de+Riesgos" alt="Gestión de Riesgos" class="img-fluid rounded shadow">
+                <img src="https://via.placeholder.com/300x200?text=Requisitos+de+Software" alt="Requisitos de Software" class="img-fluid rounded shadow">
             </div>
         </div>
         
         <div class="card bg-light mb-4">
             <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-lightbulb me-2"></i>¿Sabías que...?</h5>
-                <p class="card-text">Según estudios del Standish Group (Chaos Report), los proyectos que implementan buenas prácticas de gestión de riesgos tienen hasta tres veces más probabilidades de éxito que aquellos que no lo hacen.</p>
+                <p class="card-text">Según estudios del Standish Group, aproximadamente el 45% de las características desarrolladas en software nunca se utilizan, y otro 19% se usa raramente. Esto demuestra la importancia de una adecuada elicitación y validación de requisitos.</p>
             </div>
         </div>
     </section>
     
-    <!-- Proceso de Gestión de Riesgos -->
-    <section id="proceso" class="mb-5">
-        <h3>Proceso de Gestión de Riesgos</h3>
-        
-        <p>Un proceso efectivo de gestión de riesgos en desarrollo de software incluye los siguientes pasos:</p>
-        
-        <div class="risk-process-container mb-4">
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <div class="card risk-step h-100" data-step="1">
-                        <div class="card-body text-center">
-                            <div class="step-number">1</div>
-                            <h5 class="card-title">Identificación de Riesgos</h5>
-                            <p class="card-text">Determinar qué riesgos podrían afectar al proyecto y documentar sus características</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card risk-step h-100" data-step="2">
-                        <div class="card-body text-center">
-                            <div class="step-number">2</div>
-                            <h5 class="card-title">Análisis de Riesgos</h5>
-                            <p class="card-text">Evaluar la probabilidad de ocurrencia e impacto de cada riesgo</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card risk-step h-100" data-step="3">
-                        <div class="card-body text-center">
-                            <div class="step-number">3</div>
-                            <h5 class="card-title">Priorización de Riesgos</h5>
-                            <p class="card-text">Clasificar los riesgos según su importancia y urgencia</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card risk-step h-100" data-step="4">
-                        <div class="card-body text-center">
-                            <div class="step-number">4</div>
-                            <h5 class="card-title">Planificación de Respuestas</h5>
-                            <p class="card-text">Desarrollar estrategias para abordar cada riesgo significativo</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card risk-step h-100" data-step="5">
-                        <div class="card-body text-center">
-                            <div class="step-number">5</div>
-                            <h5 class="card-title">Monitorización y Control</h5>
-                            <p class="card-text">Seguimiento continuo de riesgos identificados y efectividad de las respuestas</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card risk-step h-100" data-step="6">
-                        <div class="card-body text-center">
-                            <div class="step-number">6</div>
-                            <h5 class="card-title">Registro y Lecciones Aprendidas</h5>
-                            <p class="card-text">Documentar el proceso y resultados para futuros proyectos</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="risk-details p-4 border rounded mb-4 bg-light" id="risk-detail-container">
-            <h5 class="text-center mb-3">Selecciona un paso para ver más detalles</h5>
-            <div id="risk-step-detail" class="text-center">
-                <i class="fas fa-arrow-up fa-2x text-muted"></i>
-                <p class="mt-2 text-muted">Haz clic en alguna de las tarjetas de arriba</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Identificación de Riesgos -->
-    <section id="identificacion" class="mb-5">
+    <!-- Características de Buenos Requisitos -->
+    <section id="caracteristicas" class="mb-5">
         <div class="card border-primary">
             <div class="card-header bg-primary text-white">
-                <h3 class="mb-0">Identificación de Riesgos</h3>
+                <h3 class="mb-0">Características de Buenos Requisitos</h3>
             </div>
             <div class="card-body">
-                <p>Para identificar riesgos de forma efectiva, puedes utilizar una combinación de estas técnicas:</p>
+                <p>Para que los requisitos sean efectivos, deben cumplir con las siguientes características:</p>
                 
-                <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fas fa-users me-2"></i>Tormenta de ideas</h5>
-                                <p class="card-text">Reúne al equipo para generar una lista amplia de posibles riesgos sin juzgar o limitar ideas.</p>
+                                <h5 class="card-title"><i class="fas fa-check-circle me-2 text-success"></i>Completos</h5>
+                                <p class="card-text">Deben incluir toda la información necesaria sin omitir detalles importantes. Todo lo que el sistema debe hacer debe estar incluido.</p>
                             </div>
                         </div>
                     </div>
@@ -137,8 +58,8 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fas fa-list-ul me-2"></i>Listas de verificación</h5>
-                                <p class="card-text">Utiliza listas predefinidas basadas en experiencias de proyectos anteriores.</p>
+                                <h5 class="card-title"><i class="fas fa-check-circle me-2 text-success"></i>Consistentes</h5>
+                                <p class="card-text">No deben contradecirse entre sí ni con otros documentos del proyecto. No debe haber conflictos entre requisitos.</p>
                             </div>
                         </div>
                     </div>
@@ -146,8 +67,8 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fas fa-comments me-2"></i>Entrevistas</h5>
-                                <p class="card-text">Conversa con expertos y stakeholders para identificar riesgos desde diferentes perspectivas.</p>
+                                <h5 class="card-title"><i class="fas fa-check-circle me-2 text-success"></i>Verificables</h5>
+                                <p class="card-text">Debe ser posible determinar si el requisito se ha implementado correctamente mediante pruebas o inspecciones.</p>
                             </div>
                         </div>
                     </div>
@@ -155,66 +76,405 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fas fa-project-diagram me-2"></i>Diagramas de causa-efecto</h5>
-                                <p class="card-text">Visualiza las relaciones entre posibles causas y efectos de riesgos.</p>
+                                <h5 class="card-title"><i class="fas fa-check-circle me-2 text-success"></i>No ambiguos</h5>
+                                <p class="card-text">Deben tener una única interpretación. Todas las partes interesadas deben entender lo mismo al leerlos.</p>
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-check-circle me-2 text-success"></i>Priorizados</h5>
+                                <p class="card-text">Deben tener una prioridad asignada para identificar los más críticos y poder gestionar adecuadamente el alcance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-check-circle me-2 text-success"></i>Rastreables</h5>
+                                <p class="card-text">Debe ser posible seguir el origen de cada requisito y su relación con otros elementos del sistema.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tipos de Requisitos -->
+    <section id="tipos-requisitos" class="mb-5">
+        <h3>Tipos de Requisitos</h3>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card h-100 border-success">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="h5 mb-0">Requisitos Funcionales</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Los <strong>requisitos funcionales</strong> describen lo que el sistema debe hacer, sus funciones específicas o servicios que debe proporcionar.</p>
+                        
+                        <h5 class="mt-3">Características:</h5>
+                        <ul>
+                            <li>Describen el comportamiento del sistema</li>
+                            <li>Especifican entradas, salidas y procesamiento</li>
+                            <li>Se expresan normalmente con verbos de acción</li>
+                        </ul>
+                        
+                        <h5 class="mt-3">Ejemplos:</h5>
+                        <div class="p-3 bg-light rounded">
+                            <ul>
+                                <li>"El sistema debe permitir a los usuarios crear una nueva cuenta con correo electrónico y contraseña"</li>
+                                <li>"El sistema debe enviar un correo de confirmación cuando un pedido es procesado"</li>
+                                <li>"El sistema debe calcular automáticamente el total de una factura incluyendo impuestos"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100 border-info">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="h5 mb-0">Requisitos No Funcionales</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Los <strong>requisitos no funcionales</strong> especifican criterios para evaluar el funcionamiento del sistema, en lugar de comportamientos específicos. Definen restricciones o atributos de calidad.</p>
+                        
+                        <h5 class="mt-3">Categorías principales:</h5>
+                        <ul>
+                            <li><strong>Rendimiento:</strong> Tiempo de respuesta, capacidad, uso de recursos</li>
+                            <li><strong>Seguridad:</strong> Autenticación, autorización, encriptación</li>
+                            <li><strong>Usabilidad:</strong> Facilidad de uso, accesibilidad, experiencia de usuario</li>
+                            <li><strong>Fiabilidad:</strong> Disponibilidad, tolerancia a fallos, recuperación</li>
+                            <li><strong>Mantenibilidad:</strong> Modularidad, capacidad de prueba, extensibilidad</li>
+                            <li><strong>Portabilidad:</strong> Adaptabilidad a diferentes entornos</li>
+                        </ul>
+                        
+                        <h5 class="mt-3">Ejemplos:</h5>
+                        <div class="p-3 bg-light rounded">
+                            <ul>
+                                <li>"El tiempo de respuesta del sistema no debe exceder 2 segundos para cualquier operación"</li>
+                                <li>"El sistema debe estar disponible el 99.9% del tiempo"</li>
+                                <li>"La aplicación debe funcionar en navegadores Chrome, Firefox y Safari"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h4 class="h5 mb-0">Otros Tipos de Requisitos</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Requisitos de Dominio</h5>
+                                <p>Derivan del dominio de aplicación del sistema y reflejan características de ese dominio.</p>
+                                <p><strong>Ejemplo:</strong> "En una aplicación bancaria, el sistema debe cumplir con la normativa de protección de datos financieros"</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Requisitos de Usuario</h5>
+                                <p>Describen los requisitos en lenguaje natural, desde la perspectiva del usuario.</p>
+                                <p><strong>Ejemplo:</strong> "Los usuarios deben poder filtrar productos por categoría y precio"</p>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h5>Requisitos de Sistema</h5>
+                                <p>Descripciones más detalladas y técnicas de las funciones que el sistema debe proporcionar.</p>
+                                <p><strong>Ejemplo:</strong> "El módulo de autenticación debe utilizar el protocolo OAuth 2.0"</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Requisitos de Proceso</h5>
+                                <p>Restricciones en el proceso de desarrollo del software.</p>
+                                <p><strong>Ejemplo:</strong> "El código debe pasar todas las pruebas unitarias antes de ser integrado"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Técnicas de Elicitación de Requisitos -->
+    <section id="elicitacion" class="mb-5">
+        <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Técnicas de Elicitación de Requisitos</h3>
+            </div>
+            <div class="card-body">
+                <p>La <strong>elicitación de requisitos</strong> es el proceso de descubrir, extraer y recopilar las necesidades de los stakeholders. Existen diversas técnicas que pueden clasificarse en dos categorías principales:</p>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100 border-success mb-3">
+                            <div class="card-header bg-success text-white">
+                                <h4 class="h5 mb-0">Técnicas Centradas en la Documentación</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Estas técnicas se basan en la revisión de documentos existentes y la generación de documentación.</p>
+                                
+                                <div class="accordion" id="accordionDocumentacion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingAnalisDoc">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAnalisDoc" aria-expanded="true" aria-controls="collapseAnalisDoc">
+                                                Análisis de Documentación Existente
+                                            </button>
+                                        </h2>
+                                        <div id="collapseAnalisDoc" class="accordion-collapse collapse show" aria-labelledby="headingAnalisDoc" data-bs-parent="#accordionDocumentacion">
+                                            <div class="accordion-body">
+                                                <p><strong>Descripción:</strong> Revisión de manuales, procesos, reportes y documentación existente relacionada con el sistema actual o sistemas similares.</p>
+                                                <p><strong>Beneficios:</strong></p>
+                                                <ul>
+                                                    <li>Comprensión de procesos actuales</li>
+                                                    <li>Identificación de reglas de negocio</li>
+                                                    <li>Menor tiempo de interrupción para los usuarios</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingCuestionarios">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuestionarios" aria-expanded="false" aria-controls="collapseCuestionarios">
+                                                Cuestionarios y Encuestas
+                                            </button>
+                                        </h2>
+                                        <div id="collapseCuestionarios" class="accordion-collapse collapse" aria-labelledby="headingCuestionarios" data-bs-parent="#accordionDocumentacion">
+                                            <div class="accordion-body">
+                                                <p><strong>Descripción:</strong> Recolección estructurada de información mediante preguntas predefinidas dirigidas a múltiples stakeholders.</p>
+                                                <p><strong>Beneficios:</strong></p>
+                                                <ul>
+                                                    <li>Alcance a gran número de interesados</li>
+                                                    <li>Estadísticas y datos cuantificables</li>
+                                                    <li>Facilidad para comparar respuestas</li>
+                                                </ul>
+                                                <p><strong>Ejemplo:</strong> Encuesta a usuarios finales sobre funcionalidades más importantes en un sistema existente.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingPlantillas">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePlantillas" aria-expanded="false" aria-controls="collapsePlantillas">
+                                                Uso de Plantillas y Patrones
+                                            </button>
+                                        </h2>
+                                        <div id="collapsePlantillas" class="accordion-collapse collapse" aria-labelledby="headingPlantillas" data-bs-parent="#accordionDocumentacion">
+                                            <div class="accordion-body">
+                                                <p><strong>Descripción:</strong> Empleo de estructuras estandarizadas y formatos predefinidos para capturar requisitos específicos.</p>
+                                                <p><strong>Beneficios:</strong></p>
+                                                <ul>
+                                                    <li>Consistencia en la documentación</li>
+                                                    <li>Menor probabilidad de olvidar aspectos importantes</li>
+                                                    <li>Facilita la reutilización de requisitos comunes</li>
+                                                </ul>
+                                                <p><strong>Ejemplo:</strong> Plantilla de historia de usuario, plantilla de caso de uso, o plantillas de requisitos no funcionales.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingModelado">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModelado" aria-expanded="false" aria-controls="collapseModelado">
+                                                Modelado de Procesos
+                                            </button>
+                                        </h2>
+                                        <div id="collapseModelado" class="accordion-collapse collapse" aria-labelledby="headingModelado" data-bs-parent="#accordionDocumentacion">
+                                            <div class="accordion-body">
+                                                <p><strong>Descripción:</strong> Creación de representaciones gráficas de los procesos de negocio para entender el flujo de información y actividades.</p>
+                                                <p><strong>Beneficios:</strong></p>
+                                                <ul>
+                                                    <li>Visualización clara de procesos complejos</li>
+                                                    <li>Identificación de ineficiencias y oportunidades de mejora</li>
+                                                    <li>Facilita la comunicación entre stakeholders técnicos y no técnicos</li>
+                                                </ul>
+                                                <p><strong>Notaciones comunes:</strong> BPMN (Business Process Model and Notation), Diagramas de flujo, Diagramas de actividad UML.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card h-100 border-info mb-3">
+                            <div class="card-header bg-info text-white">
+                                <h4 class="h5 mb-0">Técnicas de Observación</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Estas técnicas implican la interacción directa con los usuarios y la observación de sus actividades.</p>
+                                
+                                <div class="accordion" id="accordionObservacion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingEntrevistas">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEntrevistas" aria-expanded="true" aria-controls="collapseEntrevistas">
+                                                Entrevistas
+                                            </button>
+                                        </h2>
+                                        <div id="collapseEntrevistas" class="accordion-collapse collapse show" aria-labelledby="headingEntrevistas" data-bs-parent="#accordionObservacion">
+                                            <div class="accordion-body">
+                                                <p><strong>Descripción:</strong> Conversación directa con stakeholders para obtener información detallada sobre sus necesidades y expectativas.</p>
+                                                <p><strong>Tipos:</strong></p>
+                                                <ul>
+                                                    <li><strong>Estructuradas:</strong> Preguntas predefinidas en un orden específico</li>
+                                                    <li><strong>Semi-estructuradas:</strong> Preguntas planificadas pero con espacio para exploración</li>
+                                                    <li><strong>No estructuradas:</strong> Conversación abierta sobre un tema específico</li>
+                                                </ul>
+                                                <p><strong>Beneficios:</strong> Información detallada, aclaración inmediata de dudas, captura de requisitos implícitos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingObservacionDirecta">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObservacionDirecta" aria-expanded="false" aria-controls="collapseObservacionDirecta">
+                                                Observación Directa
+                                            </button>
+                                        </h2>
+                                        <div id="collapseObservacionDirecta" class="accordion-collapse collapse" aria-labelledby="headingObservacionDirecta" data-bs-parent="#accordionObservacion">
+                                            <div class="accordion-body">
+                                                <p><strong>Descripción:</strong> Observación del entorno de trabajo y las actividades de los usuarios en tiempo real.</p>
+                                                <p><strong>Variantes:</strong></p>
+                                                <ul>
+                                                    <li><strong>Observación pasiva:</strong> El analista observa sin intervenir</li>
+                                                    <li><strong>Observación participativa:</strong> El analista participa en las actividades</li>
+                                                </ul>
+                                                <p><strong>Beneficios:</strong> Descubrimiento de requisitos no expresados, comprensión del contexto real de uso, identificación de problemas prácticos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingJAD">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJAD" aria-expanded="false" aria-controls="collapseJAD">
+                                                Talleres de Requisitos (JAD)
+                                            </button>
+                                        </h2>
+                                        <div id="collapseJAD" class="accordion-collapse collapse" aria-labelledby="headingJAD" data-bs-parent="#accordionObservacion">
+                                            <div class="accordion-body">
+                                                <p><strong>Descripción:</strong> Sesiones estructuradas donde usuarios, analistas y desarrolladores trabajan conjuntamente para definir requisitos.</p>
+                                                <p><strong>Características:</strong></p>
+                                                <ul>
+                                                    <li>Reuniones altamente focalizadas</li>
+                                                    <li>Participación de múltiples stakeholders</li>
+                                                    <li>Uso de facilitadores para guiar la sesión</li>
+                                                    <li>Documentación en tiempo real</li>
+                                                </ul>
+                                                <p><strong>Beneficios:</strong> Consenso entre diferentes stakeholders, reducción del tiempo de elicitación, identificación temprana de conflictos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingPrototipos">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrototipos" aria-expanded="false" aria-controls="collapsePrototipos">
+                                                Prototipos
+                                            </button>
+                                        </h2>
+                                        <div id="collapsePrototipos" class="accordion-collapse collapse" aria-labelledby="headingPrototipos" data-bs-parent="#accordionObservacion">
+                                            <div class="accordion-body">
+                                                <p><strong>Descripción:</strong> Desarrollo de versiones preliminares del sistema para obtener feedback temprano de los usuarios.</p>
+                                                <p><strong>Tipos:</strong></p>
+                                                <ul>
+                                                    <li><strong>Prototipos de baja fidelidad:</strong> Bocetos, wireframes</li>
+                                                    <li><strong>Prototipos de alta fidelidad:</strong> Diseños detallados, interactivos</li>
+                                                    <li><strong>Prototipos desechables:</strong> Solo para obtener feedback, luego se descarta</li>
+                                                    <li><strong>Prototipos evolutivos:</strong> Se convierten gradualmente en el producto final</li>
+                                                </ul>
+                                                <p><strong>Beneficios:</strong> Visualización temprana de soluciones, validación de conceptos, descubrimiento de requisitos ocultos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Documentación de Requisitos -->
+    <section id="documentacion" class="mb-5">
+        <div class="card border-warning">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="mb-0">Buenas Prácticas de Documentación (Norma APA)</h3>
+            </div>
+            <div class="card-body">
+                <p>La documentación adecuada de los requisitos es esencial para su gestión efectiva. La Norma APA proporciona lineamientos útiles para la estructuración y formato de documentos técnicos:</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <h4 class="h5">Principios Generales de Documentación APA</h4>
+                        <ul>
+                            <li><strong>Claridad y precisión:</strong> Usar lenguaje claro y directo</li>
+                            <li><strong>Organización jerárquica:</strong> Estructurar el contenido con encabezados y subencabezados</li>
+                            <li><strong>Citación adecuada:</strong> Reconocer fuentes de información</li>
+                            <li><strong>Formato consistente:</strong> Mantener coherencia en estilo y presentación</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="h5">Aplicación en Documentos de Requisitos</h4>
+                        <ul>
+                            <li><strong>Referencias a documentos técnicos:</strong> Citar correctamente estándares, normativas o documentos previos</li>
+                            <li><strong>Estructura organizada:</strong> Facilita la navegación y comprensión del documento</li>
+                            <li><strong>Numeración de requisitos:</strong> Sistema jerárquico para identificación y trazabilidad</li>
+                            <li><strong>Uso de tablas y figuras:</strong> Complementar texto con elementos visuales numerados y referenciados</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info mb-4">
+                    <h4 class="h5"><i class="fas fa-info-circle me-2"></i>Documento de Especificación de Requisitos (SRS)</h4>
+                    <p>Un documento SRS bien estructurado según principios similares a APA debería incluir:</p>
+                    <ol>
+                        <li><strong>Introducción:</strong> Propósito, alcance, definiciones, referencias</li>
+                        <li><strong>Descripción general:</strong> Perspectiva del producto, funciones, características de usuarios, restricciones</li>
+                        <li><strong>Requisitos específicos:</strong> Detalle de todos los requisitos organizados jerárquicamente</li>
+                        <li><strong>Apéndices:</strong> Diagramas, modelos, información complementaria</li>
+                        <li><strong>Índices:</strong> Facilitan la navegación en documentos extensos</li>
+                    </ol>
                 </div>
                 
                 <div class="table-responsive">
-                    <h5>Categorías comunes de riesgos en proyectos de software:</h5>
-                    <table class="table table-hover border">
+                    <table class="table table-bordered">
                         <thead class="table-light">
                             <tr>
-                                <th>Categoría</th>
-                                <th>Ejemplos de Riesgos</th>
+                                <th>Elemento</th>
+                                <th>Formato APA</th>
+                                <th>Ejemplo en Documentación de Requisitos</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Técnicos</strong></td>
-                                <td>
-                                    <ul>
-                                        <li>Requisitos ambiguos o cambiantes</li>
-                                        <li>Complejidad técnica subestimada</li>
-                                        <li>Problemas de integración con sistemas existentes</li>
-                                        <li>Deficiencias en la arquitectura</li>
-                                    </ul>
-                                </td>
+                                <td>Títulos y encabezados</td>
+                                <td>Estructura jerárquica de 5 niveles</td>
+                                <td>1. Requisitos Funcionales<br>1.1 Módulo de Autenticación<br>1.1.1 Inicio de Sesión</td>
                             </tr>
                             <tr>
-                                <td><strong>Recursos humanos</strong></td>
-                                <td>
-                                    <ul>
-                                        <li>Falta de habilidades o conocimientos en el equipo</li>
-                                        <li>Rotación de personal clave</li>
-                                        <li>Comunicación ineficaz entre miembros del equipo</li>
-                                        <li>Conflictos internos</li>
-                                    </ul>
-                                </td>
+                                <td>Referencias</td>
+                                <td>Citas en el texto y lista de referencias</td>
+                                <td>Según el estándar IEEE 830 (IEEE, 1998), los requisitos deben ser verificables...</td>
                             </tr>
                             <tr>
-                                <td><strong>Organizacionales</strong></td>
-                                <td>
-                                    <ul>
-                                        <li>Cambios en la prioridad de los proyectos</li>
-                                        <li>Cambios en la estructura o dirección de la organización</li>
-                                        <li>Restricciones presupuestarias</li>
-                                        <li>Falta de apoyo de la alta dirección</li>
-                                    </ul>
-                                </td>
+                                <td>Tablas</td>
+                                <td>Numeradas, con título descriptivo</td>
+                                <td>Tabla 1<br>Matriz de Trazabilidad de Requisitos</td>
                             </tr>
                             <tr>
-                                <td><strong>Externos</strong></td>
-                                <td>
-                                    <ul>
-                                        <li>Cambios regulatorios o legales</li>
-                                        <li>Competencia en el mercado</li>
-                                        <li>Problemas con proveedores o terceros</li>
-                                        <li>Desastres naturales o crisis</li>
-                                    </ul>
-                                </td>
+                                <td>Figuras</td>
+                                <td>Numeradas, con leyenda explicativa</td>
+                                <td>Figura 3<br>Diagrama de Casos de Uso del Módulo de Pagos</td>
                             </tr>
                         </tbody>
                     </table>
@@ -223,578 +483,265 @@
         </div>
     </section>
     
-    <!-- Análisis y Evaluación de Riesgos -->
-    <section id="analisis" class="mb-5">
-        <div class="card border-info">
-            <div class="card-header bg-info text-white">
-                <h3 class="mb-0">Análisis y Evaluación de Riesgos</h3>
-            </div>
-            <div class="card-body">
-                <p>Una vez identificados los riesgos, es necesario analizarlos y evaluarlos para determinar su importancia relativa:</p>
-                
-                <h5 class="mb-3">Parámetros de evaluación:</h5>
-                
-                <div class="row mb-4">
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-header bg-light">
-                                <h5 class="mb-0">Probabilidad</h5>
-                            </div>
-                            <div class="card-body">
-                                <p>Posibilidad de que ocurra el riesgo:</p>
-                                <ul class="risk-scale">
-                                    <li><span class="badge bg-success">1</span> Muy baja (0-10%)</li>
-                                    <li><span class="badge bg-info">2</span> Baja (11-30%)</li>
-                                    <li><span class="badge bg-secondary">3</span> Media (31-60%)</li>
-                                    <li><span class="badge bg-warning text-dark">4</span> Alta (61-80%)</li>
-                                    <li><span class="badge bg-danger">5</span> Muy alta (81-100%)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-header bg-light">
-                                <h5 class="mb-0">Impacto</h5>
-                            </div>
-                            <div class="card-body">
-                                <p>Consecuencias si el riesgo ocurre:</p>
-                                <ul class="risk-scale">
-                                    <li><span class="badge bg-success">1</span> Insignificante</li>
-                                    <li><span class="badge bg-info">2</span> Menor</li>
-                                    <li><span class="badge bg-secondary">3</span> Moderado</li>
-                                    <li><span class="badge bg-warning text-dark">4</span> Mayor</li>
-                                    <li><span class="badge bg-danger">5</span> Crítico</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <h5 class="mb-3">Matriz de Riesgos:</h5>
-                
-                <div class="table-responsive mb-4">
-                    <table class="table table-bordered risk-matrix">
-                        <thead>
-                            <tr>
-                                <th>Impacto / Probabilidad</th>
-                                <th>1 - Muy baja</th>
-                                <th>2 - Baja</th>
-                                <th>3 - Media</th>
-                                <th>4 - Alta</th>
-                                <th>5 - Muy alta</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>5 - Crítico</th>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-danger text-white">Alto</td>
-                                <td class="bg-danger text-white">Extremo</td>
-                                <td class="bg-danger text-white">Extremo</td>
-                            </tr>
-                            <tr>
-                                <th>4 - Mayor</th>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-danger text-white">Alto</td>
-                                <td class="bg-danger text-white">Alto</td>
-                                <td class="bg-danger text-white">Extremo</td>
-                            </tr>
-                            <tr>
-                                <th>3 - Moderado</th>
-                                <td class="bg-success text-white">Bajo</td>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-danger text-white">Alto</td>
-                                <td class="bg-danger text-white">Alto</td>
-                            </tr>
-                            <tr>
-                                <th>2 - Menor</th>
-                                <td class="bg-success text-white">Bajo</td>
-                                <td class="bg-success text-white">Bajo</td>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-danger text-white">Alto</td>
-                            </tr>
-                            <tr>
-                                <th>1 - Insignificante</th>
-                                <td class="bg-success text-white">Bajo</td>
-                                <td class="bg-success text-white">Bajo</td>
-                                <td class="bg-success text-white">Bajo</td>
-                                <td class="bg-warning text-dark">Moderado</td>
-                                <td class="bg-warning text-dark">Moderado</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <h5 class="mb-3">Niveles de prioridad y acciones recomendadas:</h5>
-                
-                <div class="row mb-3">
-                    <div class="col-md-3 mb-2">
-                        <div class="card bg-danger text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Riesgo Extremo</h5>
-                                <p class="card-text">Requiere acción inmediata y plan detallado de mitigación</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="card bg-danger text-white" style="opacity: 0.8;">
-                            <div class="card-body">
-                                <h5 class="card-title">Riesgo Alto</h5>
-                                <p class="card-text">Requiere atención de la alta dirección y planificación específica</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="card bg-warning text-dark">
-                            <div class="card-body">
-                                <h5 class="card-title">Riesgo Moderado</h5>
-                                <p class="card-text">Requiere especificar responsabilidades de gestión</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-2">
-                        <div class="card bg-success text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Riesgo Bajo</h5>
-                                <p class="card-text">Gestionar mediante procedimientos rutinarios</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Estrategias de Respuesta a Riesgos -->
-    <section id="estrategias" class="mb-5">
+    <!-- Facilitación Gráfica -->
+    <section id="facilitacion-grafica" class="mb-5">
         <div class="card border-success">
             <div class="card-header bg-success text-white">
-                <h3 class="mb-0">Estrategias de Respuesta a Riesgos</h3>
+                <h3 class="mb-0">Facilitación Gráfica</h3>
             </div>
             <div class="card-body">
-                <p>Existen diferentes estrategias para responder a los riesgos identificados:</p>
-                
-                <div class="accordion" id="accordionEstrategias">
-                    <!-- Estrategias para riesgos negativos (amenazas) -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingAmenazas">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAmenazas" aria-expanded="true" aria-controls="collapseAmenazas">
-                                Estrategias para Amenazas
-                            </button>
-                        </h2>
-                        <div id="collapseAmenazas" class="accordion-collapse collapse show" aria-labelledby="headingAmenazas" data-bs-parent="#accordionEstrategias">
-                            <div class="accordion-body">
-                                <div class="row row-cols-1 row-cols-md-2 g-4">
-                                    <div class="col">
-                                        <div class="card h-100">
-                                            <div class="card-header bg-danger text-white">
-                                                <h5 class="mb-0">Evitar</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Eliminar la amenaza cambiando el plan del proyecto para eliminar la condición de riesgo.</p>
-                                                <p><strong>Ejemplo:</strong> Cambiar tecnología por una más madura y conocida.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col">
-                                        <div class="card h-100">
-                                            <div class="card-header bg-warning text-dark">
-                                                <h5 class="mb-0">Transferir</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Trasladar el impacto y responsabilidad a un tercero.</p>
-                                                <p><strong>Ejemplo:</strong> Subcontratar componentes complejos a especialistas.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col">
-                                        <div class="card h-100">
-                                            <div class="card-header bg-info text-white">
-                                                <h5 class="mb-0">Mitigar</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Reducir la probabilidad o el impacto del riesgo a un umbral aceptable.</p>
-                                                <p><strong>Ejemplo:</strong> Realizar prototipos para validar tecnología incierta.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col">
-                                        <div class="card h-100">
-                                            <div class="card-header bg-secondary text-white">
-                                                <h5 class="mb-0">Aceptar</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Reconocer el riesgo pero no tomar acciones preventivas.</p>
-                                                <p><strong>Ejemplo:</strong> Crear plan de contingencia para riesgos de baja probabilidad.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Estrategias para riesgos positivos (oportunidades) -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOportunidades">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOportunidades" aria-expanded="false" aria-controls="collapseOportunidades">
-                                Estrategias para Oportunidades
-                            </button>
-                        </h2>
-                        <div id="collapseOportunidades" class="accordion-collapse collapse" aria-labelledby="headingOportunidades" data-bs-parent="#accordionEstrategias">
-                            <div class="accordion-body">
-                                <div class="row row-cols-1 row-cols-md-2 g-4">
-                                    <div class="col">
-                                        <div class="card h-100">
-                                            <div class="card-header bg-primary text-white">
-                                                <h5 class="mb-0">Explotar</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Asegurar que la oportunidad se concrete, eliminando la incertidumbre.</p>
-                                                <p><strong>Ejemplo:</strong> Asignar a los miembros más talentosos al desarrollo de características innovadoras.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col">
-                                        <div class="card h-100">
-                                            <div class="card-header bg-primary text-white" style="opacity: 0.8;">
-                                                <h5 class="mb-0">Compartir</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Asignar propiedad a un tercero mejor capacitado para capturar la oportunidad.</p>
-                                                <p><strong>Ejemplo:</strong> Formar alianza con otra empresa para aprovechar alguna ventaja tecnológica.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col">
-                                        <div class="card h-100">
-                                            <div class="card-header bg-primary text-white" style="opacity: 0.6;">
-                                                <h5 class="mb-0">Mejorar</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Aumentar la probabilidad y/o el impacto positivo de la oportunidad.</p>
-                                                <p><strong>Ejemplo:</strong> Invertir en investigación adicional para maximizar el valor de una innovación.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col">
-                                        <div class="card h-100">
-                                            <div class="card-header bg-primary text-white" style="opacity: 0.4;">
-                                                <h5 class="mb-0">Aceptar</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Estar dispuesto a aprovechar la oportunidad si se presenta, pero sin perseguirla activamente.</p>
-                                                <p><strong>Ejemplo:</strong> Estar preparado para adoptar nuevas tecnologías emergentes si resultan beneficiosas.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-4">
-                    <h5>Plan de respuesta a riesgos</h5>
-                    <p>Para cada riesgo significativo, debes documentar:</p>
-                    <ul>
-                        <li>Estrategia de respuesta seleccionada</li>
-                        <li>Acciones específicas para implementar la estrategia</li>
-                        <li>Recursos y presupuesto necesarios</li>
-                        <li>Responsable(s) de ejecutar la respuesta</li>
-                        <li>Cronograma de implementación</li>
-                        <li>Indicadores para medir la efectividad</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Herramientas y Documentación -->
-    <section id="herramientas" class="mb-5">
-        <h3>Herramientas y Documentación</h3>
-        
-        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/300x150?text=Registro+de+Riesgos" class="card-img-top" alt="Registro de Riesgos">
-                    <div class="card-body">
-                        <h5 class="card-title">Registro de Riesgos</h5>
-                        <p class="card-text">Documento central para registrar todos los riesgos identificados, su análisis y planes de respuesta.</p>
-                        <ul>
-                            <li>Descripción del riesgo</li>
-                            <li>Categoría y origen</li>
-                            <li>Probabilidad e impacto</li>
-                            <li>Prioridad y estrategia</li>
-                            <li>Propietario del riesgo</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/300x150?text=Software+de+Gestión" class="card-img-top" alt="Software de Gestión">
-                    <div class="card-body">
-                        <h5 class="card-title">Software de Gestión de Riesgos</h5>
-                        <p class="card-text">Herramientas que facilitan la identificación, análisis y seguimiento de riesgos.</p>
-                        <ul>
-                            <li>JIRA Risk Management</li>
-                            <li>Microsoft Project</li>
-                            <li>Primavera Risk Analysis</li>
-                            <li>Solver Risk Analysis</li>
-                            <li>@Risk</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/300x150?text=Indicadores" class="card-img-top" alt="Indicadores">
-                    <div class="card-body">
-                        <h5 class="card-title">Indicadores de Riesgo</h5>
-                        <p class="card-text">Métricas para monitorear y evaluar la efectividad de la gestión de riesgos.</p>
-                        <ul>
-                            <li>Número de riesgos por nivel de prioridad</li>
-                            <li>Porcentaje de riesgos mitigados</li>
-                            <li>Costos asociados a riesgos materializados</li>
-                            <li>Efectividad de las estrategias de respuesta</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Caso Práctico y Ejercicio -->
-    <section id="caso-practico" class="mb-5">
-        <div class="card border-warning">
-            <div class="card-header bg-warning text-dark">
-                <h3 class="mb-0">Caso Práctico: Gestión de Riesgos en un Proyecto de Software</h3>
-            </div>
-            <div class="card-body">
-                <p>A continuación se presenta un caso práctico para aplicar los conceptos aprendidos:</p>
-                
-                <div class="case-study p-3 bg-light rounded mb-4">
-                    <h5>Escenario: Desarrollo de una Aplicación de Banca Móvil</h5>
-                    <p>Tu equipo está desarrollando una nueva aplicación de banca móvil que permitirá a los usuarios realizar transferencias, pagar facturas y consultar saldos. El plazo de entrega es de 6 meses, y el proyecto tiene alta visibilidad para la entidad bancaria.</p>
-                </div>
-                
-                <h5>Ejercicio: Identificación y Análisis de Riesgos</h5>
-                <p>Basándote en el escenario anterior, completa la siguiente tabla con posibles riesgos del proyecto:</p>
-                
-                <div class="table-responsive mb-4">
-                    <table class="table table-bordered table-hover risk-exercise-table">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Descripción del Riesgo</th>
-                                <th>Categoría</th>
-                                <th>Probabilidad (1-5)</th>
-                                <th>Impacto (1-5)</th>
-                                <th>Nivel de Riesgo</th>
-                                <th>Estrategia</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Vulnerabilidades de seguridad en la autenticación de usuarios</td>
-                                <td>
-                                    <select class="form-select">
-                                        <option>Seleccionar</option>
-                                        <option value="tecnico">Técnico</option>
-                                        <option value="rrhh">Recursos Humanos</option>
-                                        <option value="organizacional">Organizacional</option>
-                                        <option value="externo">Externo</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-select risk-probability">
-                                        <option>-</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-select risk-impact">
-                                        <option>-</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </td>
-                                <td class="risk-level">-</td>
-                                <td>
-                                    <select class="form-select">
-                                        <option>Seleccionar</option>
-                                        <option value="evitar">Evitar</option>
-                                        <option value="transferir">Transferir</option>
-                                        <option value="mitigar">Mitigar</option>
-                                        <option value="aceptar">Aceptar</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" placeholder="Describe otro riesgo">
-                                </td>
-                                <td>
-                                    <select class="form-select">
-                                        <option>Seleccionar</option>
-                                        <option value="tecnico">Técnico</option>
-                                        <option value="rrhh">Recursos Humanos</option>
-                                        <option value="organizacional">Organizacional</option>
-                                        <option value="externo">Externo</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-select risk-probability">
-                                        <option>-</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-select risk-impact">
-                                        <option>-</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </td>
-                                <td class="risk-level">-</td>
-                                <td>
-                                    <select class="form-select">
-                                        <option>Seleccionar</option>
-                                        <option value="evitar">Evitar</option>
-                                        <option value="transferir">Transferir</option>
-                                        <option value="mitigar">Mitigar</option>
-                                        <option value="aceptar">Aceptar</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" placeholder="Describe otro riesgo">
-                                </td>
-                                <td>
-                                    <select class="form-select">
-                                        <option>Seleccionar</option>
-                                        <option value="tecnico">Técnico</option>
-                                        <option value="rrhh">Recursos Humanos</option>
-                                        <option value="organizacional">Organizacional</option>
-                                        <option value="externo">Externo</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-select risk-probability">
-                                        <option>-</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select class="form-select risk-impact">
-                                        <option>-</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </td>
-                                <td class="risk-level">-</td>
-                                <td>
-                                    <select class="form-select">
-                                        <option>Seleccionar</option>
-                                        <option value="evitar">Evitar</option>
-                                        <option value="transferir">Transferir</option>
-                                        <option value="mitigar">Mitigar</option>
-                                        <option value="aceptar">Aceptar</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="button" id="add-risk-row" class="btn btn-outline-primary me-md-2">
-                        <i class="fas fa-plus me-1"></i> Agregar fila
-                    </button>
-                    <button type="button" id="verify-risks" class="btn btn-success">
-                        <i class="fas fa-check-circle me-1"></i> Verificar
-                    </button>
-                </div>
-                
-                <div id="risk-exercise-feedback" class="mt-3" style="display: none;"></div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Mejores Prácticas -->
-    <section id="mejores-practicas" class="mb-5">
-        <div class="card bg-light">
-            <div class="card-body">
-                <h3 class="card-title">Mejores Prácticas en Gestión de Riesgos</h3>
-                
                 <div class="row">
+                    <div class="col-md-8">
+                        <p>La <strong>facilitación gráfica</strong> es una técnica que utiliza elementos visuales para capturar, organizar y comunicar ideas de manera efectiva. Es especialmente útil en la elicitación y documentación de requisitos porque:</p>
+                        <ul>
+                            <li>Facilita la comprensión de conceptos complejos</li>
+                            <li>Mejora la retención y el recuerdo de la información</li>
+                            <li>Promueve la participación y colaboración</li>
+                            <li>Ayuda a identificar relaciones y patrones</li>
+                            <li>Reduce ambigüedades y malas interpretaciones</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/300x200?text=Facilitación+Gráfica" alt="Facilitación Gráfica" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+                
+                <h4 class="mt-4">Herramientas de Facilitación Gráfica para Requisitos</h4>
+                
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title h6 mb-0">Diagramas de Casos de Uso</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Representan la interacción entre los usuarios (actores) y el sistema, mostrando las funcionalidades desde la perspectiva del usuario.</p>
+                                <p class="small text-muted">Útiles para: Capturar requisitos funcionales de alto nivel y delimitar el alcance del sistema.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title h6 mb-0">Mapas Mentales</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Organizan visualmente información alrededor de un concepto central, mostrando relaciones jerárquicas y asociativas.</p>
+                                <p class="small text-muted">Útiles para: Realizar tormenta de ideas, categorizar requisitos y mostrar relaciones entre conceptos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title h6 mb-0">Wireframes y Mockups</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Representaciones visuales de la interfaz de usuario en diferentes niveles de fidelidad, desde esquemas básicos hasta diseños detallados.</p>
+                                <p class="small text-muted">Útiles para: Visualizar requisitos de interfaz, validar flujos de usuario y obtener feedback temprano.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title h6 mb-0">Diagramas de Flujo</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Muestran paso a paso el flujo de un proceso o algoritmo, utilizando símbolos estandarizados para representar diferentes tipos de acciones.</p>
+                                <p class="small text-muted">Útiles para: Documentar procesos de negocio, algoritmos y lógica de decisión.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title h6 mb-0">Tableros de Historias de Usuario</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Organizan visualmente las historias de usuario, permitiendo priorización, agrupación y seguimiento del estado.</p>
+                                <p class="small text-muted">Útiles para: Gestionar requisitos en metodologías ágiles, planificar sprints y visualizar el progreso.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-light">
+                                <h5 class="card-title h6 mb-0">Diagramas de Entidad-Relación</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Representan las entidades de un sistema y cómo se relacionan entre sí, modelando la estructura de datos.</p>
+                                <p class="small text-muted">Útiles para: Diseñar bases de datos, modelar dominios complejos y visualizar requisitos de datos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Caso Práctico: Historias de Usuario -->
+    <section id="caso-practico" class="mb-5">
+        <div class="card border-info">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">Caso Práctico: Historias de Usuario</h3>
+            </div>
+            <div class="card-body">
+                <p>Las <strong>historias de usuario</strong> son una técnica popular en metodologías ágiles para capturar requisitos desde la perspectiva del usuario. Veamos cómo se pueden documentar y utilizar:</p>
+                
+                <div class="row mb-4">
                     <div class="col-md-6">
-                        <div class="list-group">
-                            <div class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i> Identificar riesgos desde el inicio del proyecto
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h4 class="h5 mb-0">Estructura de una Historia de Usuario</h4>
                             </div>
-                            <div class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i> Involucrar a todos los interesados en la identificación
-                            </div>
-                            <div class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i> Actualizar el registro de riesgos regularmente
-                            </div>
-                            <div class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i> Asignar responsables para cada riesgo significativo
+                            <div class="card-body">
+                                <p><strong>Formato básico:</strong></p>
+                                <div class="p-3 bg-light rounded">
+                                    <p><strong>Como</strong> [tipo de usuario]<br>
+                                    <strong>Quiero</strong> [objetivo]<br>
+                                    <strong>Para</strong> [beneficio/valor]</p>
+                                </div>
+                                
+                                <p class="mt-3"><strong>Componentes adicionales:</strong></p>
+                                <ul>
+                                    <li><strong>Criterios de Aceptación:</strong> Condiciones que deben cumplirse para considerar la historia como completada</li>
+                                    <li><strong>Estimación:</strong> Esfuerzo relativo requerido (puntos de historia)</li>
+                                    <li><strong>Prioridad:</strong> Importancia relativa para el negocio</li>
+                                    <li><strong>Notas Técnicas:</strong> Consideraciones adicionales para el equipo de desarrollo</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     
                     <div class="col-md-6">
-                        <div class="list-group">
-                            <div class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i> Priorizar los riesgos para enfocarse en los más críticos
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h4 class="h5 mb-0">Ejemplo de Historia de Usuario</h4>
                             </div>
-                            <div class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i> Documentar lecciones aprendidas para proyectos futuros
-                            </div>
-                            <div class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i> Comunicar los riesgos de forma clara a todos los interesados
-                            </div>
-                            <div class="list-group-item">
-                                <i class="fas fa-check-circle text-success me-2"></i> Buscar oportunidades, no solo amenazas
+                            <div class="card-body">
+                                <div class="p-3 rounded" style="background-color: #f8f9fa;">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="badge bg-primary">HU-12</span>
+                                        <span class="badge bg-success">Alta prioridad</span>
+                                    </div>
+                                    
+                                    <h5>Buscar productos por categoría</h5>
+                                    
+                                    <p><strong>Como</strong> cliente de la tienda online<br>
+                                    <strong>Quiero</strong> poder buscar productos por categoría<br>
+                                    <strong>Para</strong> encontrar más fácilmente lo que estoy buscando</p>
+                                    
+                                    <p><strong>Criterios de aceptación:</strong></p>
+                                    <ul>
+                                        <li>Debe mostrarse un menú desplegable con todas las categorías disponibles</li>
+                                        <li>Al seleccionar una categoría, sólo se muestran productos de esa categoría</li>
+                                        <li>Los resultados deben mostrarse paginados, 20 productos por página</li>
+                                        <li>Debe haber un contador que muestre el total de productos en esa categoría</li>
+                                    </ul>
+                                    
+                                    <div class="d-flex justify-content-between mt-2">
+                                        <span>Estimación: 5 puntos</span>
+                                        <span>Sprint: 2</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                
+                <h4>Actividad: Crear una Historia de Usuario</h4>
+                <p>Practica la creación de historias de usuario utilizando la siguiente plantilla:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form id="user-story-form">
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="story-id" class="form-label">ID</label>
+                                    <input type="text" class="form-control" id="story-id" placeholder="HU-XX">
+                                </div>
+                                <div class="col-md-10">
+                                    <label for="story-title" class="form-label">Título</label>
+                                    <input type="text" class="form-control" id="story-title" placeholder="Verbo + Objeto + Contexto">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Historia</label>
+                                <div class="row g-2">
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Como</span>
+                                            <input type="text" class="form-control" id="story-role" placeholder="tipo de usuario">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Quiero</span>
+                                            <input type="text" class="form-control" id="story-goal" placeholder="objetivo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Para</span>
+                                            <input type="text" class="form-control" id="story-benefit" placeholder="beneficio">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="acceptance-criteria" class="form-label">Criterios de Aceptación</label>
+                                <textarea class="form-control" id="acceptance-criteria" rows="4" placeholder="Lista de condiciones que deben cumplirse..."></textarea>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label for="story-priority" class="form-label">Prioridad</label>
+                                    <select class="form-select" id="story-priority">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="Alta">Alta</option>
+                                        <option value="Media">Media</option>
+                                        <option value="Baja">Baja</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="story-points" class="form-label">Puntos</label>
+                                    <select class="form-select" id="story-points">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="5">5</option>
+                                        <option value="8">8</option>
+                                        <option value="13">13</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="story-sprint" class="form-label">Sprint</label>
+                                    <input type="number" class="form-control" id="story-sprint" min="1">
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Generar Historia de Usuario</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="user-story-preview" class="card mb-3 d-none">
+                    <div class="card-header bg-light">
+                        <h4 class="h5 mb-0">Historia de Usuario Generada</h4>
+                    </div>
+                    <div class="card-body" id="user-story-output">
+                        <!-- Aquí se mostrará la historia de usuario generada -->
                     </div>
                 </div>
             </div>
@@ -808,15 +755,14 @@
                 <h3 class="card-title">Resumen del Módulo</h3>
                 <p>En este módulo has aprendido:</p>
                 <ul>
-                    <li>Qué es la gestión de riesgos y por qué es importante en proyectos de software</li>
-                    <li>Los pasos del proceso de gestión de riesgos: identificación, análisis, priorización, respuesta, monitoreo y registro</li>
-                    <li>Técnicas para identificar y categorizar riesgos en proyectos de software</li>
-                    <li>Cómo evaluar riesgos mediante análisis cualitativo y cuantitativo</li>
-                    <li>Estrategias de respuesta para amenazas y oportunidades</li>
-                    <li>Herramientas y plantillas para documentar y dar seguimiento a los riesgos</li>
-                    <li>Aplicación práctica de la gestión de riesgos en un caso real</li>
+                    <li><strong>Conceptos fundamentales de requisitos:</strong> Definición, importancia y características de buenos requisitos</li>
+                    <li><strong>Tipos de requisitos:</strong> Funcionales, no funcionales, de usuario, de sistema, de dominio y de proceso</li>
+                    <li><strong>Técnicas de elicitación:</strong> Tanto centradas en documentación (análisis de documentación, cuestionarios) como de observación (entrevistas, prototipos)</li>
+                    <li><strong>Buenas prácticas de documentación:</strong> Aplicación de principios similares a la Norma APA para estructurar documentos de requisitos</li>
+                    <li><strong>Facilitación gráfica:</strong> Uso de herramientas visuales para capturar y comunicar requisitos de manera efectiva</li>
+                    <li><strong>Historias de usuario:</strong> Estructura, componentes y aplicación práctica en metodologías ágiles</li>
                 </ul>
-                <p>Una gestión de riesgos efectiva contribuye significativamente a la calidad del software y al éxito general del proyecto.</p>
+                <p>Un manejo efectivo de los requisitos es fundamental para el éxito de cualquier proyecto de software, ya que establece las bases para todas las fases posteriores del desarrollo.</p>
             </div>
         </div>
     </section>
@@ -830,227 +776,59 @@
     
     <!-- Script para funcionalidades específicas del módulo -->
     <script>
-        // Funcionalidad para mostrar detalles de los pasos de gestión de riesgos
-        document.querySelectorAll('.risk-step').forEach(step => {
-            step.addEventListener('click', function() {
-                const stepId = this.getAttribute('data-step');
-                let detailContent = '';
-                
-                // Resetear todas las tarjetas a su estado normal
-                document.querySelectorAll('.risk-step').forEach(s => {
-                    s.classList.remove('active-step');
-                });
-                
-                // Destacar la tarjeta seleccionada
-                this.classList.add('active-step');
-                
-                // Generar contenido según el paso seleccionado
-                switch(stepId) {
-                    case '1':
-                        detailContent = `
-                            <h5>Identificación de Riesgos</h5>
-                            <p>Este paso consiste en descubrir, reconocer y documentar los riesgos que podrían afectar al proyecto.</p>
-                            <ul>
-                                <li><strong>Entradas:</strong> Documentos del proyecto, información histórica, conocimiento de expertos</li>
-                                <li><strong>Técnicas:</strong> Brainstorming, Delphi, SWOT, listas de verificación</li>
-                                <li><strong>Salidas:</strong> Lista inicial de riesgos identificados con sus características</li>
-                            </ul>
-                        `;
-                        break;
-                    case '2':
-                        detailContent = `
-                            <h5>Análisis de Riesgos</h5>
-                            <p>Evaluación de cada riesgo para determinar su probabilidad e impacto.</p>
-                            <ul>
-                                <li><strong>Análisis cualitativo:</strong> Evaluación subjetiva basada en escalas predefinidas</li>
-                                <li><strong>Análisis cuantitativo:</strong> Evaluación numérica utilizando datos históricos y modelado</li>
-                                <li><strong>Factores a considerar:</strong> Urgencia, proximidad temporal, detectabilidad</li>
-                            </ul>
-                        `;
-                        break;
-                    case '3':
-                        detailContent = `
-                            <h5>Priorización de Riesgos</h5>
-                            <p>Ordenar los riesgos según su importancia para asignar recursos de manera eficiente.</p>
-                            <ul>
-                                <li><strong>Criterios:</strong> Nivel de riesgo (probabilidad x impacto), alineación estratégica</li>
-                                <li><strong>Herramientas:</strong> Matriz de riesgos, ranking ponderado</li>
-                                <li><strong>Resultado:</strong> Lista priorizada de riesgos que requieren atención</li>
-                            </ul>
-                        `;
-                        break;
-                    case '4':
-                        detailContent = `
-                            <h5>Planificación de Respuestas</h5>
-                            <p>Desarrollo de opciones y acciones para mejorar las oportunidades y reducir las amenazas.</p>
-                            <ul>
-                                <li><strong>Para amenazas:</strong> Evitar, transferir, mitigar, aceptar</li>
-                                <li><strong>Para oportunidades:</strong> Explotar, compartir, mejorar, aceptar</li>
-                                <li><strong>Plan de contingencia:</strong> Acciones predefinidas si un riesgo se materializa</li>
-                            </ul>
-                        `;
-                        break;
-                    case '5':
-                        detailContent = `
-                            <h5>Monitorización y Control</h5>
-                            <p>Seguimiento continuo de los riesgos identificados y efectividad de las respuestas.</p>
-                            <ul>
-                                <li><strong>Actividades:</strong> Reevaluación periódica, auditorías de riesgos</li>
-                                <li><strong>Indicadores:</strong> Métricas para evaluar la evolución de los riesgos</li>
-                                <li><strong>Actualización:</strong> Modificar estrategias según evoluciona el proyecto</li>
-                            </ul>
-                        `;
-                        break;
-                    case '6':
-                        detailContent = `
-                            <h5>Registro y Lecciones Aprendidas</h5>
-                            <p>Documentación sistemática del proceso y resultados para mejorar proyectos futuros.</p>
-                            <ul>
-                                <li><strong>Documentación:</strong> Registro completo de riesgos y estrategias</li>
-                                <li><strong>Evaluación:</strong> Análisis de efectividad de las estrategias implementadas</li>
-                                <li><strong>Mejora continua:</strong> Retroalimentación para procesos futuros</li>
-                            </ul>
-                        `;
-                        break;
-                    default:
-                        detailContent = `<p>Selecciona un paso para ver más información.</p>`;
-                }
-                
-                // Actualizar el contenedor de detalles
-                document.getElementById('risk-step-detail').innerHTML = detailContent;
-            });
-        });
-        
-        // Funcionalidad para el ejercicio de riesgos
-        document.getElementById('add-risk-row').addEventListener('click', function() {
-            const tbody = document.querySelector('.risk-exercise-table tbody');
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td>
-                    <input type="text" class="form-control" placeholder="Describe otro riesgo">
-                </td>
-                <td>
-                    <select class="form-select">
-                        <option>Seleccionar</option>
-                        <option value="tecnico">Técnico</option>
-                        <option value="rrhh">Recursos Humanos</option>
-                        <option value="organizacional">Organizacional</option>
-                        <option value="externo">Externo</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-select risk-probability">
-                        <option>-</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-select risk-impact">
-                        <option>-</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </td>
-                <td class="risk-level">-</td>
-                <td>
-                    <select class="form-select">
-                        <option>Seleccionar</option>
-                        <option value="evitar">Evitar</option>
-                        <option value="transferir">Transferir</option>
-                        <option value="mitigar">Mitigar</option>
-                        <option value="aceptar">Aceptar</option>
-                    </select>
-                </td>
-            `;
-            tbody.appendChild(newRow);
+        // Funcionalidad para el formulario de historia de usuario
+        document.getElementById('user-story-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Actualizar event listeners para los nuevos campos
-            updateRiskCalculation();
-        });
-        
-        // Funcionalidad para calcular el nivel de riesgo
-        function updateRiskCalculation() {
-            document.querySelectorAll('.risk-probability, .risk-impact').forEach(select => {
-                select.addEventListener('change', function() {
-                    const row = this.closest('tr');
-                    const probability = row.querySelector('.risk-probability').value;
-                    const impact = row.querySelector('.risk-impact').value;
-                    const levelCell = row.querySelector('.risk-level');
-                    
-                    if (probability && impact) {
-                        const level = probability * impact;
-                        let riskText = '';
-                        let colorClass = '';
-                        
-                        if (level <= 4) {
-                            riskText = 'Bajo';
-                            colorClass = 'bg-success text-white';
-                        } else if (level <= 10) {
-                            riskText = 'Moderado';
-                            colorClass = 'bg-warning text-dark';
-                        } else if (level <= 19) {
-                            riskText = 'Alto';
-                            colorClass = 'bg-danger text-white';
-                        } else {
-                            riskText = 'Extremo';
-                            colorClass = 'bg-danger text-white';
-                        }
-                        
-                        levelCell.innerHTML = `<span class="badge ${colorClass}">${riskText} (${level})</span>`;
-                    }
-                });
-            });
-        }
-        
-        // Inicializar cálculo de riesgo
-        updateRiskCalculation();
-        
-        // Verificar ejercicio
-        document.getElementById('verify-risks').addEventListener('click', function() {
-            const filledRows = document.querySelectorAll('.risk-exercise-table tbody tr:has(input[type="text"]:not(:placeholder-shown))');
-            const feedback = document.getElementById('risk-exercise-feedback');
+            const storyId = document.getElementById('story-id').value || 'HU-XX';
+            const storyTitle = document.getElementById('story-title').value || 'Nueva Funcionalidad';
+            const storyRole = document.getElementById('story-role').value || '[tipo de usuario]';
+            const storyGoal = document.getElementById('story-goal').value || '[objetivo]';
+            const storyBenefit = document.getElementById('story-benefit').value || '[beneficio]';
+            const acceptanceCriteria = document.getElementById('acceptance-criteria').value;
+            const storyPriority = document.getElementById('story-priority').value || 'No definida';
+            const storyPoints = document.getElementById('story-points').value || 'No estimado';
+            const storySprint = document.getElementById('story-sprint').value || 'No asignado';
             
-            if (filledRows.length < 3) {
-                feedback.innerHTML = `
-                    <div class="alert alert-warning">
-                        <i class="fas fa-exclamation-triangle me-2"></i> Por favor, identifica al menos 3 riesgos diferentes para completar el ejercicio.
-                    </div>
-                `;
-            } else {
-                let allFieldsFilled = true;
-                filledRows.forEach(row => {
-                    const selects = row.querySelectorAll('select');
-                    selects.forEach(select => {
-                        if (!select.value || select.value === '-' || select.value === 'Seleccionar') {
-                            allFieldsFilled = false;
-                        }
+            // Crear lista de criterios de aceptación
+            let criteriaHtml = '';
+            if (acceptanceCriteria.trim()) {
+                const criteriaItems = acceptanceCriteria.split('\n').filter(item => item.trim());
+                if (criteriaItems.length > 0) {
+                    criteriaHtml = '<p><strong>Criterios de aceptación:</strong></p><ul>';
+                    criteriaItems.forEach(item => {
+                        criteriaHtml += `<li>${item}</li>`;
                     });
-                });
-                
-                if (!allFieldsFilled) {
-                    feedback.innerHTML = `
-                        <div class="alert alert-warning">
-                            <i class="fas fa-exclamation-triangle me-2"></i> Completa todos los campos para los riesgos que has identificado.
-                        </div>
-                    `;
-                } else {
-                    feedback.innerHTML = `
-                        <div class="alert alert-success">
-                            <i class="fas fa-check-circle me-2"></i> ¡Excelente trabajo! Has completado correctamente el ejercicio de identificación y análisis de riesgos.
-                            <p class="mt-2 mb-0">Este ejercicio te ha permitido practicar cómo identificar, categorizar, evaluar y determinar estrategias para gestionar riesgos en un proyecto de software real.</p>
-                        </div>
-                    `;
+                    criteriaHtml += '</ul>';
                 }
             }
             
-            feedback.style.display = 'block';
+            // Generar HTML para la historia de usuario
+            const storyHtml = `
+                <div class="p-3 rounded" style="background-color: #f8f9fa;">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="badge bg-primary">${storyId}</span>
+                        <span class="badge ${storyPriority === 'Alta' ? 'bg-danger' : storyPriority === 'Media' ? 'bg-warning text-dark' : 'bg-success'}">${storyPriority} prioridad</span>
+                    </div>
+                    
+                    <h5>${storyTitle}</h5>
+                    
+                    <p><strong>Como</strong> ${storyRole}<br>
+                    <strong>Quiero</strong> ${storyGoal}<br>
+                    <strong>Para</strong> ${storyBenefit}</p>
+                    
+                    ${criteriaHtml}
+                    
+                    <div class="d-flex justify-content-between mt-2">
+                        <span>Estimación: ${storyPoints} puntos</span>
+                        <span>Sprint: ${storySprint}</span>
+                    </div>
+                </div>
+            `;
+            
+            // Mostrar la historia generada
+            document.getElementById('user-story-output').innerHTML = storyHtml;
+            document.getElementById('user-story-preview').classList.remove('d-none');
         });
         
         // Marcar módulo como completado
@@ -1061,613 +839,4 @@
             // para actualizar el progreso del usuario
         });
     </script>
-</div>
-
-<div class="container-fluid">
-    <h2 class="module-title">Herramientas para la Gestión de Calidad</h2>
-    
-    <div class="alert alert-info">
-        <i class="fas fa-info-circle me-2"></i> Este módulo explora las principales herramientas y técnicas utilizadas para gestionar, controlar y mejorar la calidad en el desarrollo de software.
-    </div>
-    
-    <!-- Introducción -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            <h3 class="h5 mb-0">Introducción a las Herramientas de Calidad</h3>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-7">
-                    <p>Las <strong>herramientas de calidad</strong> son instrumentos, técnicas o metodologías utilizadas para identificar, analizar y solucionar problemas relacionados con la calidad. Son fundamentales para:</p>
-                    
-                    <ul>
-                        <li>Recopilar y analizar datos</li>
-                        <li>Identificar problemas y sus causas raíz</li>
-                        <li>Generar y evaluar soluciones</li>
-                        <li>Implementar acciones de mejora</li>
-                        <li>Monitorear y controlar procesos</li>
-                    </ul>
-                    
-                    <p>Estas herramientas pueden clasificarse en dos grandes categorías:</p>
-                    <ol>
-                        <li><strong>Herramientas clásicas o básicas</strong> - También conocidas como "las 7 herramientas de la calidad"</li>
-                        <li><strong>Herramientas de gestión y planificación</strong> - Para el análisis más complejo y toma de decisiones</li>
-                    </ol>
-                </div>
-                <div class="col-md-5">
-                    <div class="text-center mb-3">
-                        <i class="fas fa-tools fa-5x text-primary"></i>
-                    </div>
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <blockquote class="blockquote mb-0 text-center">
-                                <p class="small">"La calidad nunca es un accidente; siempre es el resultado de un esfuerzo inteligente."</p>
-                                <footer class="blockquote-footer">John Ruskin</footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Las 7 Herramientas Básicas de la Calidad -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            <h3 class="h5 mb-0">Las 7 Herramientas Básicas de la Calidad</h3>
-        </div>
-        <div class="card-body">
-            <p>Las 7 herramientas básicas de la calidad, introducidas por Kaoru Ishikawa, son técnicas gráficas ampliamente utilizadas para la resolución de problemas relacionados con la calidad:</p>
-            
-            <div class="row mt-4">
-                <!-- Diagrama de Causa-Efecto (Ishikawa) -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0 d-flex align-items-center">
-                                <i class="fas fa-sitemap text-primary me-2"></i> 1. Diagrama de Causa-Efecto (Ishikawa)
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p>También conocido como diagrama de espina de pescado, ayuda a identificar las posibles causas de un problema específico.</p>
-                                    
-                                    <ul>
-                                        <li><strong>Uso:</strong> Identificar causas raíz de defectos de software</li>
-                                        <li><strong>Categorías comunes:</strong> Personas, Procesos, Herramientas, Métodos, Entorno, Materiales</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-fish fa-4x text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Hoja de verificación -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0 d-flex align-items-center">
-                                <i class="fas fa-clipboard-check text-primary me-2"></i> 2. Hoja de Verificación
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p>Formulario estructurado para recopilar y organizar datos de manera sistemática y eficiente.</p>
-                                    
-                                    <ul>
-                                        <li><strong>Uso:</strong> Registrar frecuencia de tipos de defectos, tiempos de respuesta, etc.</li>
-                                        <li><strong>Beneficio:</strong> Facilita el análisis posterior de datos</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-tasks fa-4x text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Gráficos de control -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0 d-flex align-items-center">
-                                <i class="fas fa-chart-line text-primary me-2"></i> 3. Gráficos de Control
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p>Representación gráfica de datos de un proceso a lo largo del tiempo, con límites de control establecidos.</p>
-                                    
-                                    <ul>
-                                        <li><strong>Uso:</strong> Monitorear la estabilidad de un proceso de desarrollo</li>
-                                        <li><strong>Detecta:</strong> Variaciones normales vs. variaciones especiales</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-chart-area fa-4x text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Histograma -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0 d-flex align-items-center">
-                                <i class="fas fa-chart-bar text-primary me-2"></i> 4. Histograma
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p>Gráfico de barras que muestra la distribución de frecuencias de un conjunto de datos.</p>
-                                    
-                                    <ul>
-                                        <li><strong>Uso:</strong> Visualizar la distribución de tiempos de respuesta, defectos por módulo</li>
-                                        <li><strong>Revela:</strong> Tendencias centrales, dispersión y forma de los datos</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-sort-amount-up fa-4x text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Diagrama de Pareto -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0 d-flex align-items-center">
-                                <i class="fas fa-chart-bar text-primary me-2"></i> 5. Diagrama de Pareto
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p>Combina gráficos de barras y líneas para mostrar los factores más significativos, basado en el principio 80/20.</p>
-                                    
-                                    <ul>
-                                        <li><strong>Uso:</strong> Identificar los tipos de defectos más frecuentes</li>
-                                        <li><strong>Principio:</strong> El 80% de los problemas proceden del 20% de las causas</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-percentage fa-4x text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Diagramas de dispersión -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0 d-flex align-items-center">
-                                <i class="fas fa-braille text-primary me-2"></i> 6. Diagrama de Dispersión
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p>Gráfico que muestra la relación entre dos variables mediante puntos en un plano cartesiano.</p>
-                                    
-                                    <ul>
-                                        <li><strong>Uso:</strong> Analizar correlación entre complejidad ciclomática y número de defectos</li>
-                                        <li><strong>Identifica:</strong> Correlaciones positivas, negativas o nulas</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-project-diagram fa-4x text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Estratificación -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0 d-flex align-items-center">
-                                <i class="fas fa-layer-group text-primary me-2"></i> 7. Estratificación
-                            </h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p>Técnica para dividir datos en grupos o estratos con características similares para su análisis.</p>
-                                    
-                                    <ul>
-                                        <li><strong>Uso:</strong> Analizar defectos por equipo, por módulo, por tecnología</li>
-                                        <li><strong>Propósito:</strong> Identificar patrones que no serían evidentes en datos agregados</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-object-group fa-4x text-secondary"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Herramientas de gestión y planificación -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            <h3 class="h5 mb-0">Herramientas de Gestión y Planificación</h3>
-        </div>
-        <div class="card-body">
-            <p>Estas herramientas complementan a las 7 herramientas básicas, enfocándose en aspectos más estratégicos y de gestión:</p>
-            
-            <div class="row mt-4">
-                <!-- Diagrama de afinidad -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0">Diagrama de Afinidad</h4>
-                        </div>
-                        <div class="card-body">
-                            <p>Organiza grandes cantidades de datos e ideas en grupos basados en sus relaciones naturales.</p>
-                            <p><strong>Aplicación:</strong> Organizar requisitos de usuario o feedback de clientes en categorías significativas.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Diagrama de relaciones -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0">Diagrama de Relaciones</h4>
-                        </div>
-                        <div class="card-body">
-                            <p>Muestra las relaciones causa-efecto entre diferentes factores en situaciones complejas.</p>
-                            <p><strong>Aplicación:</strong> Entender cómo los diferentes factores de un proyecto se influyen entre sí.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Diagrama de árbol -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0">Diagrama de Árbol</h4>
-                        </div>
-                        <div class="card-body">
-                            <p>Descompone objetivos generales en acciones específicas y detalladas.</p>
-                            <p><strong>Aplicación:</strong> Desglosar objetivos de calidad en acciones concretas para mejorar un proceso de desarrollo.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Matriz de priorización -->
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0">Matriz de Priorización</h4>
-                        </div>
-                        <div class="card-body">
-                            <p>Identifica las opciones más importantes o urgentes cuando hay múltiples alternativas.</p>
-                            <p><strong>Aplicación:</strong> Priorizar qué defectos o mejoras deben abordarse primero en un sprint.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Herramientas específicas para software -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            <h3 class="h5 mb-0">Herramientas Específicas para Calidad de Software</h3>
-        </div>
-        <div class="card-body">
-            <p>Además de las herramientas generales de calidad, existen herramientas y técnicas específicamente diseñadas para asegurar la calidad en el desarrollo de software:</p>
-            
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Categoría</th>
-                            <th>Herramientas</th>
-                            <th>Propósito</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Análisis Estático de Código</strong></td>
-                            <td>SonarQube, ESLint, PMD, FindBugs</td>
-                            <td>Analizar el código fuente sin ejecutarlo para detectar vulnerabilidades, bugs potenciales y deuda técnica</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pruebas Unitarias</strong></td>
-                            <td>JUnit, NUnit, Jest, Mocha</td>
-                            <td>Verificar el correcto funcionamiento de unidades individuales de código</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Integración Continua</strong></td>
-                            <td>Jenkins, CircleCI, Travis CI, GitHub Actions</td>
-                            <td>Automatizar la integración del código y la ejecución de pruebas cada vez que se realizan cambios</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Análisis de Cobertura</strong></td>
-                            <td>JaCoCo, Istanbul, Cobertura</td>
-                            <td>Medir qué porcentaje del código está siendo probado por las pruebas automáticas</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Gestión de Defectos</strong></td>
-                            <td>Jira, Bugzilla, Mantis, Azure DevOps</td>
-                            <td>Registrar, seguir y administrar defectos y problemas durante el ciclo de vida del desarrollo</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pruebas de Rendimiento</strong></td>
-                            <td>JMeter, LoadRunner, Gatling</td>
-                            <td>Evaluar la capacidad de respuesta y estabilidad del sistema bajo diferentes condiciones de carga</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Caso práctico -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            <h3 class="h5 mb-0">Caso Práctico: Análisis de Defectos</h3>
-        </div>
-        <div class="card-body">
-            <div class="alert alert-secondary mb-4">
-                <p><strong>Escenario:</strong> Una empresa de desarrollo de software está experimentando un número creciente de defectos reportados por los usuarios después de cada lanzamiento. El equipo decide utilizar herramientas de calidad para analizar y resolver el problema.</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0">Paso 1: Recopilación de Datos</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Herramienta:</strong> Hoja de Verificación</p>
-                            <p>El equipo registra todos los defectos reportados en el último trimestre, clasificándolos por:</p>
-                            <ul>
-                                <li>Tipo de defecto</li>
-                                <li>Módulo afectado</li>
-                                <li>Severidad</li>
-                                <li>Fase en la que se detectó</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0">Paso 2: Análisis de Frecuencia</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Herramienta:</strong> Diagrama de Pareto</p>
-                            <p>Al analizar los datos, encuentran que el 80% de los defectos se concentran en:</p>
-                            <ul>
-                                <li>Errores de validación de entrada (45%)</li>
-                                <li>Problemas de integración entre módulos (25%)</li>
-                                <li>Manejo incorrecto de excepciones (15%)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0">Paso 3: Análisis de Causas</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Herramienta:</strong> Diagrama de Causa-Efecto</p>
-                            <p>Para los errores de validación de entrada (el problema más frecuente), identifican causas como:</p>
-                            <ul>
-                                <li><strong>Personas:</strong> Falta de capacitación en validación</li>
-                                <li><strong>Procesos:</strong> No hay estándares claros para validación</li>
-                                <li><strong>Herramientas:</strong> No se utilizan bibliotecas de validación</li>
-                                <li><strong>Métodos:</strong> Pruebas insuficientes de casos límite</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-light">
-                            <h4 class="h6 mb-0">Paso 4: Plan de Acción</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Herramienta:</strong> Matriz de Priorización y Diagrama de Árbol</p>
-                            <p>El equipo desarrolla un plan de acción priorizando las soluciones:</p>
-                            <ol>
-                                <li>Implementar una biblioteca estándar de validación</li>
-                                <li>Crear listas de verificación para validación de entrada</li>
-                                <li>Desarrollar pruebas automatizadas para casos límite</li>
-                                <li>Realizar capacitación sobre validación de datos</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="alert alert-success">
-                <h4 class="h6"><i class="fas fa-check-circle me-2"></i>Resultados</h4>
-                <p>Después de implementar las acciones, el equipo observó una reducción del 60% en los errores de validación de entrada en el siguiente lanzamiento.</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Actividad interactiva -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            <h3 class="h5 mb-0">Actividad Interactiva: Selección de Herramientas</h3>
-        </div>
-        <div class="card-body">
-            <p>Para cada situación descrita, selecciona la herramienta de calidad más adecuada para abordar el problema:</p>
-            
-            <form id="tools-selection-quiz">
-                <div class="mb-4 p-3 border rounded">
-                    <p><strong>1. El equipo de desarrollo necesita identificar las posibles causas del aumento de tiempos de carga en una aplicación web.</strong></p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q1" id="q1_a" value="incorrect">
-                        <label class="form-check-label" for="q1_a">
-                            Diagrama de Pareto
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q1" id="q1_b" value="correct">
-                        <label class="form-check-label" for="q1_b">
-                            Diagrama de Causa-Efecto
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q1" id="q1_c" value="incorrect">
-                        <label class="form-check-label" for="q1_c">
-                            Histograma
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q1" id="q1_d" value="incorrect">
-                        <label class="form-check-label" for="q1_d">
-                            Matriz de Priorización
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="mb-4 p-3 border rounded">
-                    <p><strong>2. Se desea determinar si existe relación entre la experiencia de los desarrolladores y el número de defectos introducidos.</strong></p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q2" id="q2_a" value="incorrect">
-                        <label class="form-check-label" for="q2_a">
-                            Hoja de Verificación
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q2" id="q2_b" value="incorrect">
-                        <label class="form-check-label" for="q2_b">
-                            Gráfico de Control
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q2" id="q2_c" value="correct">
-                        <label class="form-check-label" for="q2_c">
-                            Diagrama de Dispersión
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q2" id="q2_d" value="incorrect">
-                        <label class="form-check-label" for="q2_d">
-                            Diagrama de Afinidad
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="mb-4 p-3 border rounded">
-                    <p><strong>3. El equipo necesita identificar cuáles son los tipos de defectos más frecuentes para centrar los esfuerzos de mejora.</strong></p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q3" id="q3_a" value="correct">
-                        <label class="form-check-label" for="q3_a">
-                            Diagrama de Pareto
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q3" id="q3_b" value="incorrect">
-                        <label class="form-check-label" for="q3_b">
-                            Diagrama de Árbol
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q3" id="q3_c" value="incorrect">
-                        <label class="form-check-label" for="q3_c">
-                            Diagrama de Relaciones
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q3" id="q3_d" value="incorrect">
-                        <label class="form-check-label" for="q3_d">
-                            Estratificación
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="mb-4 p-3 border rounded">
-                    <p><strong>4. Se quiere monitorear si un proceso de desarrollo está bajo control estadístico a lo largo del tiempo.</strong></p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q4" id="q4_a" value="incorrect">
-                        <label class="form-check-label" for="q4_a">
-                            Histograma
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q4" id="q4_b" value="correct">
-                        <label class="form-check-label" for="q4_b">
-                            Gráfico de Control
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q4" id="q4_c" value="incorrect">
-                        <label class="form-check-label" for="q4_c">
-                            Diagrama de Dispersión
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="q4" id="q4_d" value="incorrect">
-                        <label class="form-check-label" for="q4_d">
-                            Hoja de Verificación
-                        </label>
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">Verificar Respuestas</button>
-                <div id="quiz-result" class="mt-3" style="display: none;"></div>
-            </form>
-        </div>
-    </div>
-    
-    <!-- Resumen del módulo -->
-    <div class="card">
-        <div class="card-header bg-primary text-white">
-            <h3 class="h5 mb-0">Resumen del Módulo</h3>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-8">
-                    <p>En este módulo hemos explorado:</p>
-                    <ul>
-                        <li>Las 7 herramientas básicas de la calidad: Diagrama de Causa-Efecto, Hoja de Verificación, Gráficos de Control, Histograma, Diagrama de Pareto, Diagrama de Dispersión y Estratificación</li>
-                        <li>Herramientas de gestión y planificación como el Diagrama de Afinidad, Diagrama de Relaciones, Diagrama de Árbol y Matriz de Priorización</li>
-                        <li>Herramientas específicas para la calidad del software como analizadores de código estático, frameworks de pruebas, herramientas de CI/CD y soluciones de gestión de defectos</li>
-                        <li>La aplicación práctica de estas herramientas mediante un caso de estudio</li>
-                    </ul>
-                    <p>Estas herramientas son fundamentales para la mejora continua en el desarrollo de software, permitiendo la identificación, análisis y resolución sistemática de problemas de calidad.</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <i class="fas fa-check-circle fa-5x text-success mb-3"></i>
-                        <p>La selección adecuada y el uso efectivo de estas herramientas son habilidades clave para cualquier profesional de calidad de software.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="alert alert-info mt-3">
-                <i class="fas fa-info-circle me-2"></i> <strong>Próximo módulo:</strong> En el siguiente módulo, exploraremos la implementación de un Sistema de Gestión de Calidad (SGC) en organizaciones de desarrollo de software.
-            </div>
-        </div>
-    </div>
 </div>

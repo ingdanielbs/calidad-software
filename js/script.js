@@ -168,13 +168,126 @@ $(document).ready(function() {
     
     // Inicializar Módulo 1 - Fundamentos de Calidad
     function initializeModule1() {
-        // Ejemplo: Inicializar tooltips o popovers específicos
+        // Inicializar tooltips
         $('[data-bs-toggle="tooltip"]').tooltip();
         
         // Manejar la interacción con los elementos del módulo 1
         $('.dimension-card').on('click', function() {
             $(this).toggleClass('bg-light');
         });
+        
+        // Manejar el botón "Comprobar Respuestas" de la actividad "Relaciona Conceptos"
+        $('#check-activity').on('click', function() {
+            // Definir las respuestas correctas
+            const correctAnswers = {
+                func1: true,   // Precisión en los resultados
+                func2: true,   // Interoperabilidad con otros sistemas
+                func_wrong1: false, // Velocidad de procesamiento (incorrecto)
+                func_wrong2: false, // Diseño visual atractivo (incorrecto)
+                rel1: true,    // Tolerancia a fallos
+                rel2: true,    // Capacidad de recuperación
+                rel_wrong1: false, // Instalación rápida (incorrecto)
+                rel_wrong2: false, // Compatibilidad con múltiples idiomas (incorrecto)
+                usa1: true,    // Facilidad de aprendizaje
+                usa2: true,    // Satisfacción del usuario
+                usa_wrong1: false, // Optimización de código (incorrecto)
+                usa_wrong2: false, // Cifrado de datos (incorrecto)
+                eff1: true,    // Tiempo de respuesta
+                eff2: true,    // Uso de recursos
+                eff_wrong1: false, // Documentación completa (incorrecto)
+                eff_wrong2: false  // Seguridad ante ataques externos (incorrecto)
+            };
+            
+            // Verificar las respuestas del usuario
+            let correctCount = 0;
+            let totalCorrectOptions = 8; // Total de opciones que deberían estar marcadas
+            let totalResponses = 0;
+            let incorrectSelections = 0;
+            
+            // Verificar todas las opciones
+            for (let id in correctAnswers) {
+                const isChecked = $(`#${id}`).is(':checked');
+                const shouldBeChecked = correctAnswers[id];
+                
+                // Dar retroalimentación visual
+                if (isChecked) {
+                    totalResponses++;
+                    if (shouldBeChecked) {
+                        // Respuesta correcta
+                        $(`#${id}`).closest('.form-check').addClass('text-success fw-bold');
+                        correctCount++;
+                    } else {
+                        // Marcó una que no debería
+                        $(`#${id}`).closest('.form-check').addClass('text-danger');
+                        incorrectSelections++;
+                    }
+                } else if (shouldBeChecked) {
+                    // No marcó una que debería
+                    $(`#${id}`).closest('.form-check').addClass('text-danger');
+                }
+            }
+            
+            // Calcular puntuación - ahora basada en aciertos y con penalización por errores
+            const score = Math.max(0, (correctCount / totalCorrectOptions) * 100 - (incorrectSelections * 12.5));
+            
+            // Mostrar resultado
+            let resultMessage = '';
+            if (score >= 70) {
+                resultMessage = `
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i> ¡Excelente! Has relacionado correctamente los conceptos.
+                        <p class="mt-2 mb-0">Puntuación: ${Math.round(score)}%</p>
+                    </div>
+                `;
+            } else {
+                resultMessage = `
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> Revisa nuevamente los conceptos.
+                        <p class="mt-2 mb-0">Puntuación: ${Math.round(score)}%</p>
+                    </div>
+                `;
+            }
+            
+            $('#activity-result').html(resultMessage).fadeIn();
+            
+            // Registrar este progreso
+            if (!userProgress.activities) {
+                userProgress.activities = {};
+            }
+            
+            userProgress.activities['module1_relaciona'] = {
+                completed: score >= 70,
+                score: Math.round(score),
+                date: new Date()
+            };
+            
+            saveUserProgress();
+        });
+        
+        // Botón para reiniciar la actividad si ya existe
+        if ($('#reset-activity').length) {
+            $('#reset-activity').on('click', function() {
+                // Quitar todas las clases de retroalimentación
+                $('.form-check').removeClass('text-success text-danger fw-bold');
+                // Desmarcar todos los checkboxes
+                $('input[type="checkbox"]').prop('checked', false);
+                // Ocultar el resultado
+                $('#activity-result').hide();
+            });
+        } else {
+            // Añadir botón de reinicio después del botón de comprobación
+            $('#check-activity').after('<button id="reset-activity" class="btn btn-outline-secondary mt-3 ms-2">Reiniciar</button>');
+            
+            // Manejar el evento del nuevo botón
+            $('#reset-activity').on('click', function() {
+                // Quitar todas las clases de retroalimentación
+                $('.form-check').removeClass('text-success text-danger fw-bold');
+                // Desmarcar todos los checkboxes
+                $('input[type="checkbox"]').prop('checked', false);
+                // Ocultar el resultado
+                $('#activity-result').hide();
+            });
+        }
     }
     
     // Inicializar Módulo 2 - Mapa de Procesos
@@ -183,46 +296,418 @@ $(document).ready(function() {
         if ($('.draggable-item').length > 0) {
             initializeDragAndDrop();
         }
+        
+        // Implementar la verificación de la actividad de clasificación de procesos
+        $('#check-process-classification').on('click', function() {
+            let correctAnswers = 0;
+            let totalQuestions = $('.process-type').length;
+            
+            // Verificar cada respuesta
+            $('.process-type').each(function() {
+                const selectedValue = $(this).val();
+                const correctValue = $(this).data('correct');
+                
+                // Quitar clases previas
+                $(this).removeClass('is-valid is-invalid');
+                
+                // Verificar si es correcta
+                if (selectedValue === correctValue) {
+                    $(this).addClass('is-valid');
+                    correctAnswers++;
+                } else if (selectedValue !== '') {
+                    $(this).addClass('is-invalid');
+                }
+            });
+            
+            // Calcular porcentaje
+            const score = Math.round((correctAnswers / totalQuestions) * 100);
+            
+            // Mostrar resultado
+            let resultMessage = '';
+            if (score === 100) {
+                resultMessage = `
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i> ¡Excelente! Has clasificado correctamente todos los procesos.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            } else if (score >= 60) {
+                resultMessage = `
+                    <div class="alert alert-warning">
+                        <i class="fas fa-check-circle me-2"></i> ¡Bien! Has clasificado correctamente ${correctAnswers} de ${totalQuestions} procesos.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            } else {
+                resultMessage = `
+                    <div class="alert alert-danger">
+                        <i class="fas fa-times-circle me-2"></i> Necesitas repasar más los conceptos. Has clasificado correctamente ${correctAnswers} de ${totalQuestions} procesos.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            }
+            
+            // Mostrar el mensaje de resultado
+            $('#process-classification-result').html(resultMessage).fadeIn();
+            
+            // Registrar el progreso del usuario
+            if (!userProgress.activities) {
+                userProgress.activities = {};
+            }
+            
+            userProgress.activities['module2_classification'] = {
+                completed: score >= 60,
+                score: score,
+                date: new Date()
+            };
+            
+            saveUserProgress();
+        });
+        
+        // Agregar botón para reiniciar la actividad
+        if ($('#reset-process-classification').length === 0) {
+            $('#check-process-classification').after('<button id="reset-process-classification" class="btn btn-outline-secondary mt-3 ms-2">Reiniciar</button>');
+            
+            // Manejar el evento del botón de reinicio
+            $('#reset-process-classification').on('click', function() {
+                // Resetear todas las selecciones
+                $('.process-type').val('').removeClass('is-valid is-invalid');
+                // Ocultar el resultado
+                $('#process-classification-result').hide();
+            });
+        }
     }
     
     // Inicializar Módulo 3 - Ciclo PHVA
     function initializeModule3() {
         // Animación para los pasos del ciclo PHVA al hacer clic
         $('.phva-step').on('click', function() {
-            const stepId = $(this).data('step-id');
+            const phase = $(this).data('phase');
             
             // Destacar el paso actual
             $('.phva-step').removeClass('active');
             $(this).addClass('active');
             
             // Mostrar la descripción detallada
-            $('.phva-description').hide();
-            $(`#phva-description-${stepId}`).fadeIn();
+            let detailContent = '';
+            
+            switch(phase) {
+                case 'planear':
+                    detailContent = `
+                        <div class="card border-success">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">Fase de Planear</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>En esta fase se establecen objetivos y se identifican los procesos necesarios para lograr los resultados esperados.</p>
+                                <h6>Herramientas útiles:</h6>
+                                <ul>
+                                    <li>Análisis FODA</li>
+                                    <li>Diagrama de Ishikawa</li>
+                                    <li>Análisis de requisitos</li>
+                                    <li>Benchmarking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'hacer':
+                    detailContent = `
+                        <div class="card border-info">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="mb-0">Fase de Hacer</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>En esta fase se implementan los procesos planificados, siguiendo una metodología estructurada.</p>
+                                <h6>Consideraciones importantes:</h6>
+                                <ul>
+                                    <li>Asignar recursos adecuados</li>
+                                    <li>Capacitar al personal involucrado</li>
+                                    <li>Documentar las acciones realizadas</li>
+                                    <li>Seguir el plan establecido</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'verificar':
+                    detailContent = `
+                        <div class="card border-warning">
+                            <div class="card-header bg-warning text-dark">
+                                <h5 class="mb-0">Fase de Verificar</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>En esta fase se realiza el seguimiento y medición de los procesos respecto a los objetivos planteados.</p>
+                                <h6>Métodos de verificación:</h6>
+                                <ul>
+                                    <li>Auditorías internas</li>
+                                    <li>Análisis de indicadores de desempeño</li>
+                                    <li>Retroalimentación del cliente</li>
+                                    <li>Pruebas y validaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'actuar':
+                    detailContent = `
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger text-white">
+                                <h5 class="mb-0">Fase de Actuar</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>En esta fase se toman acciones para mejorar continuamente el desempeño de los procesos.</p>
+                                <h6>Acciones típicas:</h6>
+                                <ul>
+                                    <li>Implementar mejoras</li>
+                                    <li>Estandarizar cambios exitosos</li>
+                                    <li>Establecer nuevos objetivos</li>
+                                    <li>Iniciar un nuevo ciclo PHVA</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                default:
+                    detailContent = '<p>Selecciona una fase para ver sus detalles.</p>';
+            }
+            
+            $('#phva-details').html(detailContent).hide().fadeIn();
+        });
+        
+        // Manejar el envío del formulario de la actividad PHVA
+        $('#phva-activity-form').on('submit', function(e) {
+            e.preventDefault();
+            
+            // Verificar las respuestas seleccionadas
+            const planearAnswer = $('input[name="planear"]:checked').val();
+            const hacerAnswer = $('input[name="hacer"]:checked').val();
+            const verificarAnswer = $('input[name="verificar"]:checked').val();
+            const actuarAnswer = $('input[name="actuar"]:checked').val();
+            
+            // Verificar si se respondieron todas las preguntas
+            if (!planearAnswer || !hacerAnswer || !verificarAnswer || !actuarAnswer) {
+                $('#phva-activity-result').html(`
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> Por favor, responde todas las preguntas antes de comprobar.
+                    </div>
+                `).fadeIn();
+                return;
+            }
+            
+            // Contar respuestas correctas
+            let correctCount = 0;
+            let totalQuestions = 4;
+            
+            // Verificar cada respuesta y dar retroalimentación visual
+            if (planearAnswer === 'correct') {
+                correctCount++;
+                $('input[id="planear2"]').closest('.form-check').addClass('text-success fw-bold');
+            } else {
+                $('input[name="planear"]:checked').closest('.form-check').addClass('text-danger');
+                $('input[id="planear2"]').closest('.form-check').addClass('text-success');
+            }
+            
+            if (hacerAnswer === 'correct') {
+                correctCount++;
+                $('input[id="hacer3"]').closest('.form-check').addClass('text-success fw-bold');
+            } else {
+                $('input[name="hacer"]:checked').closest('.form-check').addClass('text-danger');
+                $('input[id="hacer3"]').closest('.form-check').addClass('text-success');
+            }
+            
+            if (verificarAnswer === 'correct') {
+                correctCount++;
+                $('input[id="verificar1"]').closest('.form-check').addClass('text-success fw-bold');
+            } else {
+                $('input[name="verificar"]:checked').closest('.form-check').addClass('text-danger');
+                $('input[id="verificar1"]').closest('.form-check').addClass('text-success');
+            }
+            
+            if (actuarAnswer === 'correct') {
+                correctCount++;
+                $('input[id="actuar2"]').closest('.form-check').addClass('text-success fw-bold');
+            } else {
+                $('input[name="actuar"]:checked').closest('.form-check').addClass('text-danger');
+                $('input[id="actuar2"]').closest('.form-check').addClass('text-success');
+            }
+            
+            // Calcular porcentaje de acierto
+            const score = Math.round((correctCount / totalQuestions) * 100);
+            
+            // Mostrar resultado
+            let resultMessage = '';
+            if (score === 100) {
+                resultMessage = `
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i> ¡Excelente! Has identificado correctamente todas las acciones del ciclo PHVA.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            } else if (score >= 75) {
+                resultMessage = `
+                    <div class="alert alert-info">
+                        <i class="fas fa-check-circle me-2"></i> ¡Muy bien! Has comprendido la mayoría de las fases del ciclo PHVA.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            } else if (score >= 50) {
+                resultMessage = `
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> Vas por buen camino, pero necesitas repasar algunos conceptos del ciclo PHVA.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            } else {
+                resultMessage = `
+                    <div class="alert alert-danger">
+                        <i class="fas fa-times-circle me-2"></i> Te recomendamos revisar nuevamente los conceptos del ciclo PHVA.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            }
+            
+            // Mostrar mensaje de resultado
+            $('#phva-activity-result').html(resultMessage).fadeIn();
+            
+            // Registrar el progreso del usuario
+            if (!userProgress.activities) {
+                userProgress.activities = {};
+            }
+            
+            userProgress.activities['module3_phva'] = {
+                completed: score >= 75,
+                score: score,
+                date: new Date()
+            };
+            
+            saveUserProgress();
+            
+            // Deshabilitar el botón de enviar para evitar múltiples envíos
+            $(this).find('button[type="submit"]').prop('disabled', true);
+            
+            // Agregar botón para reintentar
+            if ($('#reset-phva-activity').length === 0) {
+                $('#phva-activity-result').after('<button id="reset-phva-activity" class="btn btn-outline-secondary mt-3">Reintentar</button>');
+                
+                // Manejar clic en el botón de reintentar
+                $('#reset-phva-activity').on('click', function() {
+                    // Limpiar selecciones y retroalimentación visual
+                    $('input[type="radio"]').prop('checked', false);
+                    $('.form-check').removeClass('text-success text-danger fw-bold');
+                    $('#phva-activity-result').hide();
+                    $('#phva-activity-form').find('button[type="submit"]').prop('disabled', false);
+                    $(this).remove();
+                });
+            }
         });
     }
     
     // Inicializar Módulo 4 - Caracterización de Procesos
     function initializeModule4() {
-        // Código para manejar las actividades interactivas del módulo 4
+        // Manejar la interacción con los elementos del módulo 4
         $('.process-element').on('click', function() {
             // Mostrar información adicional
             const elementId = $(this).data('element-id');
             $('.element-info').hide();
             $(`#element-info-${elementId}`).fadeIn();
         });
+
+        // Implementar la verificación de la actividad de identificación de elementos
+        $('#characterization-elements-form').on('submit', function(e) {
+            e.preventDefault();
+            
+            let correctAnswers = 0;
+            let totalQuestions = $('.element-type').length;
+            
+            // Verificar cada respuesta
+            $('.element-type').each(function() {
+                const selectedValue = $(this).val();
+                const correctValue = $(this).data('correct');
+                
+                // Quitar clases previas
+                $(this).removeClass('is-valid is-invalid');
+                
+                // Verificar si es correcta
+                if (selectedValue === correctValue) {
+                    $(this).addClass('is-valid');
+                    correctAnswers++;
+                } else if (selectedValue !== '') {
+                    $(this).addClass('is-invalid');
+                }
+            });
+            
+            // Calcular porcentaje
+            const score = Math.round((correctAnswers / totalQuestions) * 100);
+            
+            // Mostrar resultado
+            let resultMessage = '';
+            if (score === 100) {
+                resultMessage = `
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i> ¡Excelente! Has identificado correctamente todos los elementos de caracterización.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            } else if (score >= 60) {
+                resultMessage = `
+                    <div class="alert alert-warning">
+                        <i class="fas fa-check-circle me-2"></i> ¡Bien! Has identificado correctamente ${correctAnswers} de ${totalQuestions} elementos.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            } else {
+                resultMessage = `
+                    <div class="alert alert-danger">
+                        <i class="fas fa-times-circle me-2"></i> Necesitas repasar los conceptos de caracterización de procesos. Has identificado correctamente ${correctAnswers} de ${totalQuestions} elementos.
+                        <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                    </div>
+                `;
+            }
+            
+            // Mostrar el mensaje de resultado
+            $('#characterization-result').html(resultMessage).fadeIn();
+            
+            // Registrar el progreso del usuario
+            if (!userProgress.activities) {
+                userProgress.activities = {};
+            }
+            
+            userProgress.activities['module4_elements'] = {
+                completed: score >= 60,
+                score: score,
+                date: new Date()
+            };
+            
+            saveUserProgress();
+        });
+        
+        // Agregar botón para reiniciar la actividad
+        if ($('#reset-characterization-elements').length === 0) {
+            $('#characterization-elements-form button[type="submit"]').after('<button id="reset-characterization-elements" class="btn btn-outline-secondary mt-3 ms-2">Reiniciar</button>');
+            
+            // Manejar el evento del botón de reinicio
+            $('#reset-characterization-elements').on('click', function(e) {
+                e.preventDefault();
+                // Resetear todas las selecciones
+                $('.element-type').val('').removeClass('is-valid is-invalid');
+                // Ocultar el resultado
+                $('#characterization-result').hide();
+            });
+        }
     }
     
     // Inicializar el quiz del módulo 5
     function initializeQuiz() {
-        // Verificar si existe un formulario de quiz
-        if ($('#quality-assessment').length > 0) {
-            // Manejar el envío del formulario
-            $('#quality-assessment').on('submit', function(e) {
+        // Verificar si existe el formulario de evaluación
+        if ($('#knowledge-evaluation').length > 0) {
+            // Manejar el envío del formulario de evaluación
+            $('#knowledge-evaluation').on('submit', function(e) {
                 e.preventDefault();
                 
                 // Recopilar las respuestas
                 const answers = {};
-                const totalQuestions = $('.quiz-question').length;
+                const totalQuestions = 10; // Total de preguntas en el formulario
                 let correctAnswers = 0;
                 
                 // Para cada pregunta, verificar si la respuesta es correcta
@@ -252,10 +737,10 @@ $(document).ready(function() {
                     
                     // Resaltar visualmente respuestas correctas e incorrectas
                     if (isCorrect) {
-                        $(`input[name="q${i}"]:checked`).closest('.form-check').addClass('answer-correct');
+                        $(`input[name="q${i}"]:checked`).closest('.form-check').addClass('text-success fw-bold');
                     } else {
-                        $(`input[name="q${i}"]:checked`).closest('.form-check').addClass('answer-incorrect');
-                        $(`input[name="q${i}"][value="correct"]`).closest('.form-check').addClass('answer-correct');
+                        $(`input[name="q${i}"]:checked`).closest('.form-check').addClass('text-danger');
+                        $(`input[name="q${i}"][value="correct"]`).closest('.form-check').addClass('text-success');
                     }
                 }
                 
@@ -263,20 +748,63 @@ $(document).ready(function() {
                 const score = Math.round((correctAnswers / totalQuestions) * 100);
                 
                 // Mostrar el resultado
-                $('.quiz-result').html(`
-                    <div class="alert ${score >= 70 ? 'alert-success' : 'alert-warning'}">
-                        <h4 class="alert-heading">
-                            ${score >= 70 ? '<i class="fas fa-check-circle me-2"></i> ¡Bien hecho!' : '<i class="fas fa-exclamation-triangle me-2"></i> Necesitas repasar'}
-                        </h4>
-                        <p>Has respondido correctamente ${correctAnswers} de ${totalQuestions} preguntas.</p>
-                        <hr>
-                        <p class="mb-0">Puntuación final: <strong>${score}%</strong></p>
-                    </div>
+                let resultMessage = '';
+                if (score >= 80) {
+                    resultMessage = `
+                        <div class="alert alert-success">
+                            <h4 class="alert-heading"><i class="fas fa-check-circle me-2"></i> ¡Excelente!</h4>
+                            <p>Has demostrado un conocimiento sólido sobre los conceptos de calidad de software.</p>
+                            <hr>
+                            <p class="mb-0">Has respondido correctamente ${correctAnswers} de ${totalQuestions} preguntas.</p>
+                            <p class="mb-0">Puntuación final: <strong>${score}%</strong></p>
+                        </div>
+                    `;
+                } else if (score >= 70) {
+                    resultMessage = `
+                        <div class="alert alert-info">
+                            <h4 class="alert-heading"><i class="fas fa-check-circle me-2"></i> ¡Buen trabajo!</h4>
+                            <p>Tienes un buen entendimiento de los conceptos de calidad de software.</p>
+                            <hr>
+                            <p class="mb-0">Has respondido correctamente ${correctAnswers} de ${totalQuestions} preguntas.</p>
+                            <p class="mb-0">Puntuación final: <strong>${score}%</strong></p>
+                        </div>
+                    `;
+                } else if (score >= 60) {
+                    resultMessage = `
+                        <div class="alert alert-warning">
+                            <h4 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i> Aprobado</h4>
+                            <p>Has aprobado la evaluación, pero es recomendable reforzar algunos conceptos.</p>
+                            <hr>
+                            <p class="mb-0">Has respondido correctamente ${correctAnswers} de ${totalQuestions} preguntas.</p>
+                            <p class="mb-0">Puntuación final: <strong>${score}%</strong></p>
+                        </div>
+                    `;
+                } else {
+                    resultMessage = `
+                        <div class="alert alert-danger">
+                            <h4 class="alert-heading"><i class="fas fa-times-circle me-2"></i> Necesitas repasar</h4>
+                            <p>Es recomendable repasar los módulos anteriores para reforzar los conceptos clave.</p>
+                            <hr>
+                            <p class="mb-0">Has respondido correctamente ${correctAnswers} de ${totalQuestions} preguntas.</p>
+                            <p class="mb-0">Puntuación final: <strong>${score}%</strong></p>
+                        </div>
+                    `;
+                }
+                
+                // Agregar botones para revisar y reintentar
+                resultMessage += `
                     <button type="button" class="btn btn-primary" id="reviewQuiz">Revisar Respuestas</button>
                     ${score < 70 ? '<button type="button" class="btn btn-outline-primary ms-2" id="retakeQuiz">Reintentar</button>' : ''}
-                `).fadeIn();
+                `;
+                
+                // Mostrar resultado
+                $('.quiz-result').html(resultMessage).fadeIn();
                 
                 // Guardar los resultados en el progreso del usuario
+                if (!userProgress.quizResults) {
+                    userProgress.quizResults = {};
+                }
+                
                 userProgress.quizResults['module5'] = {
                     score: score,
                     correctAnswers: correctAnswers,
@@ -295,11 +823,15 @@ $(document).ready(function() {
                 // Actualizar la interfaz de progreso
                 updateProgressUI();
                 
+                // Deshabilitar el botón de envío para evitar múltiples envíos
+                $(this).find('button[type="submit"]').prop('disabled', true);
+                
                 // Manejar el botón de reintentar
                 $('#retakeQuiz').on('click', function() {
                     $('.quiz-result').hide();
-                    $('.form-check').removeClass('answer-correct answer-incorrect');
-                    $('#quality-assessment')[0].reset();
+                    $('.form-check').removeClass('text-success text-danger fw-bold');
+                    $('#knowledge-evaluation')[0].reset();
+                    $('#knowledge-evaluation').find('button[type="submit"]').prop('disabled', false);
                 });
                 
                 // Manejar el botón de revisar
