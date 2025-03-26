@@ -24,7 +24,12 @@
                 </ul>
             </div>
             <div class="col-md-4 text-center">
-                <img src="https://via.placeholder.com/300x200?text=Requisitos+de+Software" alt="Requisitos de Software" class="img-fluid rounded shadow">
+                <div class="card bg-light p-4 shadow-sm">
+                    <i class="fas fa-clipboard-list fa-5x text-primary mb-3"></i>
+                    <i class="fas fa-code fa-3x text-secondary mb-3"></i>
+                    <i class="fas fa-check-square fa-3x text-success mb-2"></i>
+                    <p class="text-muted">Requisitos, Desarrollo y Validación</p>
+                </div>
             </div>
         </div>
         
@@ -767,13 +772,6 @@
         </div>
     </section>
     
-    <!-- Botón para marcar como completado -->
-    <div class="text-center mt-4 mb-5">
-        <button id="mark-complete" class="btn btn-lg btn-success">
-            <i class="fas fa-check-circle me-2"></i> Marcar módulo como completado
-        </button>
-    </div>
-    
     <!-- Script para funcionalidades específicas del módulo -->
     <script>
         // Funcionalidad para el formulario de historia de usuario
@@ -829,14 +827,6 @@
             // Mostrar la historia generada
             document.getElementById('user-story-output').innerHTML = storyHtml;
             document.getElementById('user-story-preview').classList.remove('d-none');
-        });
-        
-        // Marcar módulo como completado
-        document.getElementById('mark-complete').addEventListener('click', function() {
-            alert('¡Módulo completado! Tu progreso ha sido guardado.');
-            
-            // En una implementación real, aquí enviaríamos la información al servidor
-            // para actualizar el progreso del usuario
         });
     </script>
 </div>

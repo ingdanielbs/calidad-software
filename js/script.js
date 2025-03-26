@@ -49,6 +49,120 @@ $(document).ready(function() {
         }
     });
     
+    // Escuchar el evento de apertura del modal de progreso
+    $('#progressModal').on('show.bs.modal', function() {
+        updateProgressModal();
+    });
+    
+    // Función para actualizar el contenido del modal de progreso
+    function updateProgressModal() {
+        // Calcular el porcentaje de progreso
+        const progressPercentage = Math.round((userProgress.completedModules.length / totalModules) * 100);
+        
+        // Actualizar la barra de progreso
+        $('#progressModal .progress-bar').css('width', `${progressPercentage}%`)
+            .attr('aria-valuenow', progressPercentage)
+            .text(`${progressPercentage}%`);
+        
+        // Actualizar la lista de módulos completados
+        const moduleNames = [
+            "Fundamentos de Calidad", 
+            "Mapa de Procesos", 
+            "Ciclo PHVA", 
+            "Caracterización de Procesos",
+            "Evaluación de Conocimientos",
+            "Metodologías de Desarrollo",
+            "Requisitos y Documentación"
+        ];
+        
+        // Obtener la lista de elementos
+        const listItems = $('#progressModal .list-group-item');
+        
+        // Actualizar cada elemento de la lista
+        for (let i = 0; i < moduleNames.length; i++) {
+            const moduleNumber = i + 1;
+            const isCompleted = userProgress.completedModules.includes(moduleNumber);
+            
+            const badge = $(listItems[i]).find('.badge');
+            
+            if (isCompleted) {
+                badge.removeClass('bg-secondary').addClass('bg-primary');
+                badge.html('<i class="fas fa-check"></i>');
+            } else {
+                badge.removeClass('bg-primary').addClass('bg-secondary');
+                badge.html('<i class="fas fa-minus"></i>');
+            }
+        }
+        
+        // Mostrar información adicional de actividades si existen
+        let activityInfo = '';
+        if (userProgress.activities) {
+            let completedActivities = 0;
+            let totalActivities = Object.keys(userProgress.activities).length;
+            
+            for (const key in userProgress.activities) {
+                if (userProgress.activities[key].completed) {
+                    completedActivities++;
+                }
+            }
+            
+            if (totalActivities > 0) {
+                activityInfo = `
+                    <div class="mt-4">
+                        <h6>Actividades Completadas:</h6>
+                        <div class="progress mb-2">
+                            <div class="progress-bar bg-info" role="progressbar" 
+                                style="width: ${Math.round((completedActivities / totalActivities) * 100)}%;" 
+                                aria-valuenow="${completedActivities}" 
+                                aria-valuemin="0" 
+                                aria-valuemax="${totalActivities}">
+                                ${completedActivities} de ${totalActivities}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Mostrar información de evaluación si existe
+        let quizInfo = '';
+        if (userProgress.quizResults && userProgress.quizResults['module5']) {
+            const quizResult = userProgress.quizResults['module5'];
+            const quizDate = quizResult.date ? new Date(quizResult.date).toLocaleDateString() : 'N/A';
+            
+            quizInfo = `
+                <div class="mt-4">
+                    <h6>Resultado de la Evaluación:</h6>
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <p class="mb-1"><strong>Puntuación:</strong> ${quizResult.score}%</p>
+                            <p class="mb-1"><strong>Aciertos:</strong> ${quizResult.correctAnswers} de ${quizResult.totalQuestions}</p>
+                            <p class="mb-0"><strong>Fecha:</strong> ${quizDate}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Agregar la información adicional al modal
+        if (activityInfo || quizInfo) {
+            // Verificar si ya existe la sección adicional
+            if ($('#progress-additional-info').length === 0) {
+                $('#progressModal .progress-container').append(`
+                    <div id="progress-additional-info">
+                        ${activityInfo}
+                        ${quizInfo}
+                    </div>
+                `);
+            } else {
+                $('#progress-additional-info').html(`
+                    ${activityInfo}
+                    ${quizInfo}
+                `);
+            }
+        }
+    }
+    
     // Función para cargar un módulo
     function loadModule(moduleNumber) {
         // Actualizamos el título del módulo actual
@@ -106,8 +220,8 @@ $(document).ready(function() {
             case 3: title = "Ciclo PHVA"; break;
             case 4: title = "Caracterización de Procesos"; break;
             case 5: title = "Evaluación de Conocimientos"; break;
-            case 6: title = "Métricas de Calidad"; break;
-            case 7: title = "Mejora Continua"; break;
+            case 6: title = "Metodologías de Desarrollo"; break;
+            case 7: title = "Requisitos y Documentación"; break;
             default: title = "Calidad de Software";
         }
         
@@ -993,13 +1107,210 @@ $(document).ready(function() {
     
     // Funciones de inicialización para cada módulo
     function initializeModule6() {
-        console.log("Inicializando módulo 6: Metodologías de Desarrollo");
-        // Marcar este módulo como completado cuando el usuario lo visita
-        if (!userProgress.completedModules.includes(6)) {
-            userProgress.completedModules.push(6);
-            saveUserProgress();
-            updateProgressUI();
+        // Inicializar los componentes interactivos del módulo
+        $('.metric-card').on('click', function() {
+            $(this).toggleClass('selected');
+            
+            // Mostrar detalles de la métrica seleccionada
+            const metricId = $(this).data('metric-id');
+            $('.metric-details').hide();
+            $(`#metric-detail-${metricId}`).fadeIn();
+        });
+        
+        // Implementar funcionalidad de drag and drop para el ejercicio "Mapeo de Prácticas"
+        if ($('.practice-item').length > 0) {
+            console.log("Inicializando drag and drop para módulo 6");
+            
+            // Habilitar arrastrar en los elementos de práctica
+            $('.practice-item').draggable({
+                cursor: 'grab',
+                cursorAt: { top: 20, left: 20 },
+                helper: 'clone',
+                revert: 'invalid',
+                opacity: 0.7,
+                zIndex: 100
+            });
+            
+            // Habilitar soltar en las zonas de metodología
+            $('.drop-zone').droppable({
+                accept: '.practice-item',
+                hoverClass: 'drop-hover',
+                drop: function(event, ui) {
+                    const draggable = ui.draggable;
+                    const practice = draggable.data('practice');
+                    const dropZone = $(this);
+                    
+                    // Crear una copia del elemento arrastrado
+                    const droppedItem = $('<div>')
+                        .addClass('practice-item p-2 mb-2 rounded dropped-item')
+                        .attr('data-practice', practice)
+                        .html(draggable.html())
+                        .append('<button type="button" class="btn-close position-absolute top-0 end-0 m-1" aria-label="Close"></button>');
+                    
+                    // Agregar a la zona de destino
+                    dropZone.append(droppedItem);
+                    
+                    // Manejar el clic en el botón de cerrar para eliminar el elemento
+                    droppedItem.find('.btn-close').on('click', function() {
+                        $(this).parent().remove();
+                    });
+                }
+            });
+            
+            // Manejar el botón para reiniciar el ejercicio
+            $('#reset-mapeo-ejercicio').on('click', function() {
+                $('.drop-zone').empty();
+                $('#mapeo-feedback').hide();
+            });
+            
+            // Verificar las respuestas del ejercicio de mapeo
+            $('#verificar-mapeo').on('click', function() {
+                const feedbackElement = $('#mapeo-feedback');
+                let correctAssignments = 0;
+                let totalAssignments = 0;
+                
+                // Definir las respuestas correctas (práctica -> metodología)
+                const correctAnswers = {
+                    'daily-scrum': 'scrum',
+                    'pair-programming': 'xp',
+                    'wip-limits': 'kanban',
+                    'requirements-doc': 'cascada',
+                    'ci-cd': 'devops'
+                };
+                
+                // Verificar cada zona de destino
+                $('.drop-zone').each(function() {
+                    const methodology = $(this).data('methodology');
+                    
+                    // Verificar cada elemento colocado en esta zona
+                    $(this).find('.practice-item').each(function() {
+                        totalAssignments++;
+                        const practice = $(this).data('practice');
+                        
+                        // Verificar si esta práctica pertenece a esta metodología
+                        if (correctAnswers[practice] === methodology) {
+                            correctAssignments++;
+                            $(this).addClass('bg-success text-white');
+                        } else {
+                            $(this).addClass('bg-danger text-white');
+                        }
+                    });
+                });
+                
+                // Calcular puntuación
+                const score = totalAssignments > 0 ? Math.round((correctAssignments / totalAssignments) * 100) : 0;
+                
+                // Mostrar retroalimentación
+                let message = '';
+                if (totalAssignments === 0) {
+                    message = `
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i> Debes arrastrar al menos una práctica a su metodología correspondiente antes de verificar.
+                        </div>
+                    `;
+                } else if (score === 100 && totalAssignments === 5) {  // 5 prácticas en total
+                    message = `
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle me-2"></i> ¡Excelente! Has relacionado correctamente todas las prácticas con sus metodologías.
+                            <p class="mt-2 mb-0">Puntuación: ${score}%</p>
+                        </div>
+                    `;
+                } else if (score >= 60) {
+                    message = `
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i> Buen trabajo, pero algunas relaciones no son correctas. Revisa las marcadas en rojo.
+                            <p class="mt-2 mb-0">Puntuación: ${score}% (${correctAssignments} de ${totalAssignments} correctas)</p>
+                        </div>
+                    `;
+                } else {
+                    message = `
+                        <div class="alert alert-danger">
+                            <i class="fas fa-times-circle me-2"></i> Necesitas revisar los conceptos. Muchas de las relaciones no son correctas.
+                            <p class="mt-2 mb-0">Puntuación: ${score}% (${correctAssignments} de ${totalAssignments} correctas)</p>
+                        </div>
+                    `;
+                }
+                
+                // Mostrar el mensaje de retroalimentación
+                feedbackElement.html(message).fadeIn();
+            });
         }
+        
+        // Inicializar tooltips específicos
+        $('[data-bs-toggle="tooltip"]').tooltip();
+        
+        // Manejar la actividad de selección de metodología
+        $('#verificar-metodologia').on('click', function() {
+            const seleccion = $('input[name="metodologia"]:checked');
+            const feedbackElement = $('#metodologia-feedback');
+            
+            if (!seleccion.length) {
+                feedbackElement.html('<div class="alert alert-warning">Por favor, selecciona una opción.</div>');
+                feedbackElement.show();
+                return;
+            }
+            
+            if (seleccion.val() === 'scrum' || seleccion.val() === 'xp') {
+                feedbackElement.html(`
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i> ¡Correcto! Una metodología ágil como 
+                        ${seleccion.val() === 'scrum' ? 'Scrum' : 'Extreme Programming'} 
+                        es ideal para este caso debido a la naturaleza cambiante de los requisitos, el equipo pequeño y la necesidad de entregar rápidamente.
+                    </div>
+                `);
+                
+                // Registrar el progreso
+                if (!userProgress.activities) {
+                    userProgress.activities = {};
+                }
+                
+                userProgress.activities['module6_methodology'] = {
+                    completed: true,
+                    score: 100,
+                    date: new Date()
+                };
+                
+                saveUserProgress();
+            } else {
+                feedbackElement.html(`
+                    <div class="alert alert-danger">
+                        <i class="fas fa-times-circle me-2"></i> Esta no es la mejor opción. Para un proyecto con requisitos cambiantes y necesidad de entrega rápida, las metodologías ágiles serían más adecuadas.
+                    </div>
+                `);
+                
+                // Registrar intento
+                if (!userProgress.activities) {
+                    userProgress.activities = {};
+                }
+                
+                userProgress.activities['module6_methodology'] = {
+                    completed: false,
+                    score: 0,
+                    date: new Date()
+                };
+                
+                saveUserProgress();
+            }
+            
+            feedbackElement.show();
+        });
+        
+        // Marcar módulo como completado
+        $('#mark-complete').on('click', function() {
+            if (!userProgress.completedModules.includes(6)) {
+                userProgress.completedModules.push(6);
+                saveUserProgress();
+                updateProgressUI();
+            }
+            
+            $(this).html('<i class="fas fa-check-circle me-2"></i> Módulo completado').addClass('btn-success').removeClass('btn-primary').prop('disabled', true);
+            
+            // Mostrar mensaje de confirmación
+            $('<div class="alert alert-success mt-3"><i class="fas fa-check-circle me-2"></i> ¡Módulo completado! Tu progreso ha sido guardado.</div>')
+                .insertAfter($(this))
+                .hide()
+                .fadeIn();
+        });
     }
     
     function initializeModule7() {
